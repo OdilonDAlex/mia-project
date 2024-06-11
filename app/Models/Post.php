@@ -12,10 +12,15 @@ class Post extends Model
 
     protected $fillable = [
         'content',
+        'reaction_id'
     ];
 
 
     public function users(): BelongsTo{
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function reaction(): BelongsTo{
+        return $this->belongsTo(Reaction::class, 'reaction_id');
     }
 }
