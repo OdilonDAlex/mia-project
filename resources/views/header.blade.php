@@ -3,10 +3,10 @@
     <p class="logo">LOGO</p>
 
     <div class="container-nav-links">
-        <a href="{{ route('home') }}" class="nav-link">Acceuil</a>
+        <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Acceuil</a>
         <a href="#" class="nav-link">Blog</a>
         <a href="#" class="nav-link">Evenement</a>
-        <a href="{{ route('survey.index') }}" class="nav-link">Sondage</a>
+        <a href="{{ route('survey.index') }}" class="nav-link {{ request()->routeIs('survey.*') ? 'active' : '' }}">Sondage</a>
         <a href="#" class="nav-link">Cercle</a>
     </div>
 
@@ -33,10 +33,10 @@
     @endauth
     @guest
         <div class="container-btn">
-            <form action="" method="post">
+            <form action="{{ route('register') }}" method="GET">
                 <button class="btn-inscription" type="submit">Inscription</button>
             </form>
-            <form action="" method="post">
+            <form action="{{ route('login') }}" method="GET">
                 <button class="btn-connection" type="submit">Connexion</button>
             </form>
         </div>

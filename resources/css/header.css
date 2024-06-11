@@ -33,12 +33,18 @@ header {
 
 .container-nav-links .nav-link {
     height: 100%;
+    margin: 0 5px;
+    width: 100px;
     color: var(--text-primary);
     border-bottom: 3px solid transparent;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid var(--bg-secondary);
 }
 
 .container-nav-links .nav-link:hover {
