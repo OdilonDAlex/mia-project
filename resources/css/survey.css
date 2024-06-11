@@ -1,0 +1,11 @@
+section.content {
+    padding-top: 20px;
+    background-color: rgb(238, 241, 244);
+    width: 100vw;
+    height: calc(100vh - 50px);
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    grid-auto-rows: max-content;
+    justify-content: center;
+}
