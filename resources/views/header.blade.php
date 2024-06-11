@@ -10,23 +10,35 @@
         <a href="#" class="nav-link">Cercle</a>
     </div>
 
-    <div class="container-tools">
-        <div class="container-search-bar">
-            <input type="search" name="" id="" placeholder="Recherchez quelque chose...">
-            <div class="btn-search">
-                @include('assets.svg.search-bar')
+    @auth
+        <div class="container-tools">
+            <div class="container-search-bar">
+                <input type="search" name="" id="" placeholder="Recherchez quelque chose...">
+                <div class="btn-search">
+                    @include('assets.svg.search-bar')
+                </div>
+            </div>
+            <div class="profil-user">
+                <p class="acronym-user">AA</p>
+                <form method="POST" action="{{ route('logout') }}" class="container-profil">
+                    @csrf
+
+                    <span class="arrow"></span>
+                    @include('assets.svg.user')
+                    <p class="username">Lorem ipsum</p>
+                    <button type="submit">Se Deconnecter</button>
+                </form>
             </div>
         </div>
-        <div class="profil-user">
-            <p class="acronym-user">AA</p>
-            <form method="POST" action="{{ route('logout') }}" class="container-profil">
-                @csrf
-
-                <span class="arrow"></span>
-                @include('assets.svg.user')
-                <p class="username">Lorem ipsum</p>
-                <button type="submit">Se Deconnecter</button>
+    @endauth
+    @guest
+        <div class="container-btn">
+            <form action="" method="post">
+                <button class="btn-inscription" type="submit">Inscription</button>
+            </form>
+            <form action="" method="post">
+                <button class="btn-connection" type="submit">Connexion</button>
             </form>
         </div>
-    </div>
+    @endguest
 </header>
