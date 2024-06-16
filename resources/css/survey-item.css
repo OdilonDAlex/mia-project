@@ -1,0 +1,72 @@
+.survey-item {
+    background-color: white;
+    width: 65ch;
+    min-height: 220px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgb(166, 165, 165);
+}
+
+.survey-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.survey-item > h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: rgb(57, 57, 60);
+}
+
+.survey-item .content {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.survey-item > .content{
+    display: flex;
+    justify-content: center;
+}
+
+.survey-item > .content > p{
+    text-indent: 30px;
+    color: #333;
+    font-size: 14px;
+    width: 80%;
+}
+
+.survey-item-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px;
+    height: 50px;
+}
+
+.survey-item-footer > button{
+    height: 35px;
+    width: 130px;
+    float: right;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    color: white;
+    background-color: rgb(57, 100, 186);
+}
+
+.survey-item-footer > button:hover{
+    background-color: rgb(90, 127, 203);
+}
+
+.survey-item-footer > span {
+    font-size: 12px;
+    color: rgb(99, 98, 98);
+}
+
