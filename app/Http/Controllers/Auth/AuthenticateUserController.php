@@ -16,7 +16,7 @@ class AuthenticateUserController extends Controller
     }
 
     public function store(LoginFormRequest $request) {
-        
+
         $request->authenticate();
 
         $request->session()->regenerate();

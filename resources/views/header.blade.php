@@ -19,13 +19,15 @@
                 </div>
             </div>
             <div class="profil-user">
-                <p class="acronym-user">AA</p>
+                <p class="acronym-user">{{ strtoupper(Str::limit(Auth::user()->name, 2, '')) }}</p>
                 <form method="POST" action="{{ route('logout') }}" class="container-profil">
                     @csrf
 
+                    @method('delete')
+
                     <span class="arrow"></span>
                     @include('assets.svg.user')
-                    <p class="username">Lorem ipsum</p>
+                    <p class="username">{{ Auth::user()->name }}</p>
                     <button type="submit">Se Deconnecter</button>
                 </form>
             </div>

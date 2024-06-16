@@ -1,6 +1,11 @@
 :root {
-    --text-primary: #232323;
+    --text-primary: rgba(63, 64, 77, 0.835);
     --bg-primary: #ffffff;
-    --bg-secondary: #ddd;
-    --bg-tertiary: #989898;
+    --bg-secondary: #47e2d0;
+    --bg-tertiary: #47bde2;
+    --bg-fourth: #f0f0f0;
+    --btn-primary: #50577a;
+    --btn-secondary: #41475e;
+    --btn-tertiary: #ffffff;
+    --box-shadow: #2a2b3677;
 }

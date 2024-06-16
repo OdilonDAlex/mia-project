@@ -58,7 +58,7 @@
     border: none;
     font-size: 12px;
     color: white;
-    background-color: rgb(57, 100, 186);
+    background-color: var(--btn-primary);
 }
 
 .survey-item-footer > button:hover{

@@ -1,0 +1,23 @@
+section.content {
+    height: calc(100vh - 60px);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section.content > div {
+    width: 49%;
+}
+
+section.content > div + div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+section.content div form {
+    width: 100%;
+}

@@ -7,12 +7,9 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-<<<<<<< HEAD
-                'resources/css/input.css'
-=======
+                'resources/css/input.css',
+                'resources/css/header.css',
                 'resources/js/header.js',
-                'resources/css/header.css'
->>>>>>> survey
             ],
             refresh: true,
         }),

@@ -18,7 +18,6 @@ class RegisterUserController extends Controller
     }
 
     public function store(RegisterFormRequest $request) {
-        
         $credentias = $request->validated();
 
         $user = User::create([
@@ -26,12 +25,6 @@ class RegisterUserController extends Controller
             'email' => $credentias['email'],
             'password' => Hash::make($credentias['password'])
         ]);
-
-        $cart = $user->carts()->create();
-
-        $user->carts()->associate($cart);
-
-        $user->save();
 
         Auth::login($user);
 
