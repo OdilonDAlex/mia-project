@@ -9,3 +9,8 @@
     --btn-tertiary: #ffffff;
     --box-shadow: #2a2b3677;
 }
+
+* {
+    box-sizing: border-box;
+    font-family: Poppins;
+}

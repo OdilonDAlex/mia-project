@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     @vite('resources/css/app.css')
-    @vite('resources/css/login.css')
+    @vite('resources/css/register.css')
 </head>
 
 <body>
     <section class="content">
         <div class="illustration">
+            <h1>
+                Lorem ipsum dolor sit amet, consectetur elit.
+            </h1>
             @include('assets.svg.login-illustration')
         </div>
         <div>
@@ -20,17 +23,50 @@
 
                 <!-- Nom -->
                 <x-input label="Nom" type="text" name="name" id="name"/>
+                
+                <!-- Prenom   -->
+                <x-input label="Prenom" type="text" name="firstname" id="firstname"/>
 
                 <!-- adresse email -->
                 <x-input label="Adresse email" type="email" name="email" id="email"/>
 
                 <!-- Mot de passe -->
-                <x-input label="Mot de passe" type="password" name="password" id="password"/>
+
+                <div class="passwords">
+                    <x-input label="Mot de passe" type="password" name="password" id="password"/>
+                    <x-input label="Confirmation mot de passe" type="password" name="confirm-password" id="confirm-password"/>                    
+                </div>
 
                 <!-- Submit -->
                 <x-input value="S'inscrire" type="submit"/>
 
+                <!-- alternative -->
+                <a class="alternative-link" href="">
+                    Se connecter
+                </a>
+
             </form>
+
+            <hr>
+            <small class="alternative">S'inscrire avec</small>
+
+            <div class="alternative-login-btns">
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.facebook')
+                    </button>
+                </form>
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.gmail')
+                    </button>
+                </form>
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.linkedin')
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 </body>

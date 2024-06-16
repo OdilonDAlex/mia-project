@@ -13,7 +13,7 @@ label {
 input[type="text"], input[type="password"], input[type="email"] {
     background-color: var(--bg-fourth);
     padding: 8px;
-    border: none;
+    border: 1px solid transparent;
     outline: none;
     border-radius: 3px;
 }
@@ -25,18 +25,6 @@ input[type="submit"] {
     border: 1px solid var(--bg-primary);
     border-radius: 3px;
     cursor: pointer;
-}
-
-a {
-    height: 30px;
-    color: var(--bg-sixth);
-    background-color: var(--bg-primary);
-    border: 1px solid var(--bg-primary);
-    border-radius: 3px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 textarea {
