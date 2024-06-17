@@ -7,7 +7,7 @@ use App\Http\Requests\auth\RegisterFormRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Validation\ValidationException;
 
 class RegisterUserController extends Controller
 {
@@ -18,10 +18,18 @@ class RegisterUserController extends Controller
     }
 
     public function store(RegisterFormRequest $request) {
+
+        if($request['confirm-password'] !== $request['password']){
+            throw ValidationException::withMessages([
+                'password' => 'mot de passe', 
+            ]);
+        }
+
         $credentias = $request->validated();
 
         $user = User::create([
             'name' => $credentias['name'],
+            'firstname' => $credentias['firstname'],
             'email' => $credentias['email'],
             'password' => Hash::make($credentias['password'])
         ]);
