@@ -20,4 +20,8 @@ class EventModel extends Model
     public function author(): BelongsTo{
         return $this->belongsTo(User::class, 'author_id');
     } 
+
+    public function users(): BelongsToMany {
+        return $this->belongsToMany(User::class, 'event_model_user', 'event_id', 'user_id');
+    }
 }

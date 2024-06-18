@@ -61,7 +61,11 @@ class User extends Authenticatable
         return $this->name . " " . $this->firstname; 
     }
 
-    public function event_models(): HasMany {
+    public function created_events(): HasMany {
         return $this->hasMany(EventModel::class, 'author_id');
+    }
+
+    public function events(): BelongsToMany {
+        return $this->belongsToMany(EventModel::class, 'event_model_user', 'user_id', 'event_id');
     }
 }
