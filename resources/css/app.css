@@ -11,6 +11,18 @@
 }
 
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: Poppins;
+    font-size: small;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: var(--bg-light-dark);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #bebdbd;
 }

@@ -1,0 +1,115 @@
+section.content{
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.evenement_cliquer {
+    background-color: var(--bg-primary);
+    padding: 10px;
+    width: calc(100% - 60ch);
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.liste_evenement{
+    background-color: var(--bg-fourth);
+    width: 60ch;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.liste_evenement > .div_evenement{
+    margin-top: 20px;
+    height: max-content;
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(128, 128, 128, 0.375);
+    padding: 15px;
+    width: 89%;
+}
+
+.div_evenement > p.description {
+    text-indent: 30px;
+}
+
+.liste_evenement > .div_evenement > h2{
+    color: rgb(99, 99, 99);
+    margin: 5px 0px;
+}
+
+.liste_evenement > .div_evenement > .description{
+    color: rgb(103, 101, 101);
+    font-size: 15px;
+}
+
+.liste_evenement > .div_evenement > .date {
+    color: rgb(178, 178, 178);
+    font-size: 12px;
+}
+
+.images{
+    background-color: rgb(190, 190, 190);
+    height: 400px;
+    margin: 10px auto;
+}
+
+.evenement_principale {
+    margin: auto;
+    width: 100%;
+    max-width: 90ch;
+    
+}
+
+.container_identification{
+    display: flex;
+    font-size: 13px;
+    height: 50px;
+    color: #959494;
+}
+
+.container_identification > #interaction {
+    margin-left: auto;
+}
+
+hr {
+    border-color: #4447;
+}
+
+.container_description {
+    padding: 20px;
+}
+
+.container_description > div #btn_plus, .container_description > div #btn_interesse {
+    background-color: var(--btn-primary);
+    color: white;
+    padding: 8px 20px;
+    margin-top: 20px;
+    border-radius: 3px;
+    font-size: 15px;
+    border: none;
+}
+
+.container_description > div #btn_plus{
+    background-color: white;
+    color: #444;
+    border: 1px solid grey;
+}
+
+.container_description div #btn_interesse{
+    margin-left: 20px;
+}
+
+.container_description div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.container_description > p{
+    text-indent: 3rem;
+}
