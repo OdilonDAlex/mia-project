@@ -41,16 +41,14 @@
                 <x-input value="S'inscrire" type="submit"/>
 
                 <!-- alternative -->
-                <a class="alternative-link" href="">
+                <a class="alternative-link" href="{{ route('login') }}">
                     Se connecter
                 </a>
 
             </form>
 
-            <hr>
-            <small class="alternative">S'inscrire avec</small>
-
-            <div class="alternative-login-btns">
+            <fieldset>
+                <legend>ou</legend>
                 <form action="" method="GET">
                     <button type="submit">
                         @include('assets.svg.facebook')
@@ -66,7 +64,7 @@
                         @include('assets.svg.linkedin')
                     </button>
                 </form>
-            </div>
+            </fieldset>
         </div>
     </section>
 </body>

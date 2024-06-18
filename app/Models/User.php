@@ -55,4 +55,8 @@ class User extends Authenticatable
     public function reactions(): BelongsToMany {
         return $this->belongsToMany(Reaction::class);
     }
+
+    public function getFullName(): string {
+        return $this->name . " " . $this->firstname; 
+    }
 }

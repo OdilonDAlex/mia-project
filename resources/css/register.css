@@ -114,3 +114,38 @@ section.content div.alternative-login-btns svg {
     max-width: 100%;
     max-height: 100%;
 }
+
+fieldset {
+    text-align: center;
+    display: flex;
+    border-width: 1.5px 0 0 0;
+    border-color: #44444463;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+ fieldset form {
+    padding: 0 10px!important;
+ }
+
+fieldset form svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+fieldset form {
+    margin: 0 20px;
+}
+
+fieldset legend {
+    padding: 0 10px;
+    font-size: small;
+}
+
+section.content fieldset form button {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

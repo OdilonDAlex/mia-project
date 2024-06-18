@@ -27,7 +27,30 @@
                 <!-- Adresse email -->
                 <x-input value="Se connecter" type="submit" />
 
+                <!-- alternative -->
+                <a class="alternative-link" href="{{ route('register') }}">
+                    S'inscrire
+                </a>
+
             </form>
+            <fieldset>
+                <legend>ou</legend>
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.facebook')
+                    </button>
+                </form>
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.gmail')
+                    </button>
+                </form>
+                <form action="" method="GET">
+                    <button type="submit">
+                        @include('assets.svg.linkedin')
+                    </button>
+                </form>
+            </fieldset>
         </div>
     </section>
 </body>

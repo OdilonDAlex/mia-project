@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="profil-user">
-                <p class="acronym-user">{{ strtoupper(Str::limit(Auth::user()->name, 2, '')) }}</p>
+                <p class="acronym-user">{{ Str::title(strtoupper(Str::limit(Auth::user()->firstname, 2, ''))) }}</p>
                 <form method="POST" action="{{ route('logout') }}" class="container-profil">
                     @csrf
 
@@ -27,7 +27,7 @@
 
                     <span class="arrow"></span>
                     @include('assets.svg.user')
-                    <p class="username">{{ Auth::user()->name }}</p>
+                    <p class="username">{{ Auth::user()->getFullName() }}</p>
                     <button type="submit">Se Deconnecter</button>
                 </form>
             </div>
