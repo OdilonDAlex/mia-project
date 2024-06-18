@@ -68,4 +68,8 @@ class User extends Authenticatable
     public function events(): BelongsToMany {
         return $this->belongsToMany(EventModel::class, 'event_model_user', 'user_id', 'event_id');
     }
+
+    public function isAttachedAt(EventModel $event){
+        return in_array($this->id, $event->users()->pluck('id')->toArray());
+    }
 }
