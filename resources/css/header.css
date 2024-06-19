@@ -1,14 +1,14 @@
 header {
     width: 100vw;
     height: 50px;
-    background-color: var(--bg-primary);    
+    background-color: var(--bg-primary);
     padding: 0px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.container-nav-links {
+header .container-nav-links {
     width: 50%;
     max-width: 500px;
     height: 100%;
@@ -17,7 +17,7 @@ header {
     align-items: center;
 }
 
-.container-nav-links .nav-link {
+header .container-nav-links .nav-link {
     height: 100%;
     margin: 0 5px;
     width: 100px;
@@ -29,24 +29,24 @@ header {
     align-items: center;
 }
 
-.nav-link.active {
+header .nav-link.active {
     background-color: var(--bg-fourth);
     border-bottom: 3px solid var(--text-primary);
 }
 
-.container-nav-links .nav-link:hover {
+header .container-nav-links .nav-link:hover {
     background-color: var(--bg-fourth);
     /* border-bottom: 3px solid var(--box-shadow); */
 }
 
-.container-tools {
+header .container-tools {
     width: 40%;
     max-width: 400px;
     display: flex;
     justify-content: space-around;
 }
 
-.container-search-bar {
+header .container-search-bar {
     width: 70%;
     min-width: 250px;
     height: 30px;
@@ -57,7 +57,7 @@ header {
     align-items: center;
 }
 
-.container-search-bar input {
+header .container-search-bar input {
     width: 88%;
     height: 30px;
     padding-left: 5px;
@@ -66,7 +66,7 @@ header {
     outline: none;
 }
 
-.container-search-bar .btn-search {
+header .container-search-bar .btn-search {
     height: 100%;
     width: 30px;
     background-color: var(--box-shadow);
@@ -76,15 +76,15 @@ header {
     align-items: center;
 }
 
-.container-search-bar img {
+header .container-search-bar img {
     font-size: medium;
 }
 
-.profil-user {
+header .profil-user {
     position: relative;
 }
 
-.profil-user .acronym-user {
+header .profil-user .acronym-user {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -98,7 +98,7 @@ header {
     cursor: pointer;
 }
 
-.profil-user form {
+header .profil-user form {
     width: 200px;
     padding-top: 10px;
     border-radius: 5px;
@@ -114,7 +114,7 @@ header {
     top: 42px;
 }
 
-.profil-user form .arrow {
+header .profil-user form .arrow {
     width: 15px;
     height: 15px;
     border-top: .5px solid var(--box-shadow);
@@ -126,17 +126,17 @@ header {
     right: 15px;
 }
 
-.profil-user form img {
+header .profil-user form img {
     width: 60px;
     padding: 5px;
     border-radius: 5px;
 }
 
-.profil-user form .username {
+header .profil-user form .username {
     margin-bottom: 10px;
 }
 
-.profil-user form button {
+header .profil-user form button {
     width: 100%;
     height: 30px;
     border: none;
@@ -144,25 +144,25 @@ header {
     cursor: pointer;
 }
 
-.container-btn {
+header .container-btn {
     width: 290px;
     display: flex;
     justify-content: space-between;
 }
 
-.container-btn button {
+header .container-btn button {
     padding: 5px 35px;
     border-radius: 3px;
     cursor: pointer;
 }
 
-.btn-inscription {
+header .btn-inscription {
     color: var(--btn-primary);
     border: .5px solid var(--btn-primary);
     background-color: var(--bg-primary);
 }
 
-.btn-connection {
+header .btn-connection {
     color: var(--bg-primary);
     border: .5px solid var(--btn-primary);
     background-color: var(--btn-primary);

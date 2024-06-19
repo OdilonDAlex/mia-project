@@ -1,0 +1,284 @@
+
+p, a, button, input {
+    font-size: small;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section.content aside.left-container {
+    width: 56ch;
+    max-width: 56ch;
+    height: 100vh;
+    background-color: #e9e9e9;
+}
+
+section.content aside.left-container div.extract-blog {
+    width: 80%;
+    margin: auto;
+}
+
+section.content main.container-blog {
+    width: 75%;
+    height: 100vh;
+    background-color: var(--bg-fourth);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.content main.container-blog div.create-blog {
+    width: 65ch;
+    height: max-content;
+    margin-top: 20px;
+}
+
+section.content main.container-blog div.create-blog p.username {
+    margin-bottom: 5px;
+}
+
+section.content main.container-blog div.create-blog div.container-all-tools {
+    border-radius: 3px;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    box-shadow: 0px 5px 10px var(--box-shadow);
+}
+
+section.content div.create-blog div.container-all-tools div.container-tools {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+section.content .acronym-user {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    color: var(--bg-primary);
+    border-radius: 5px;
+    background-color: var(--btn-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.content div.container-all-tools div.container-tools textarea {
+    width: 88%;
+    min-width: 88%;
+    max-width: 88%;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    background-color: var(--bg-fourth);
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+
+section.content .items-colors {
+    width: 88%;
+    margin-left: 11%;
+    margin-top: 10px;
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.content .items-colors .color {
+    width: 35px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: var(--text-primary);
+}
+
+/* blogs */
+
+section.content div.list-blogs {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.content .container-single-blog {
+    width: 65ch;
+    background-color: var(--bg-primary);
+    box-shadow: 0px 5px 10px var(--box-shadow);
+    border: .5px solid var(--bg-fourth);
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+section.content .head-blog {
+    width: 100%;
+    min-width: 100%;
+    padding: 10px 15px;
+    background-color: var(--bg-primary);
+    border-bottom: .5px solid var(--bg-fourth);
+    border-radius: 3px 3px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.content .info-user {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.content .author-name {
+    text-wrap: nowrap;
+    font-weight: 600;
+}
+
+section.content .date-pub {
+    color: var(--box-shadow);
+    font-size: smaller;
+}
+
+section.content .username-and-date {
+    margin-left: 10px;
+}
+
+section.content .plus-info { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section.content div.plus-info p.three-dots {
+    width: 20px;
+    text-align: right;
+    /* background-color: red; */
+    font-size: larger;
+    cursor: pointer;
+}
+
+section.content .pop-up {
+    width: 100px;
+    padding: 10px 0px;
+    background-color: var(--bg-primary);
+    border-radius: 3px;
+    box-shadow: 0px 5px 10px var(--box-shadow);
+    border-top: .5px solid var(--bg-fourth);
+    position: absolute;
+    top: 50px;
+    right: -15px;
+}
+
+section.content .arrow {
+    width: 15px;
+    height: 15px;
+    background-color: var(--bg-primary);
+    transform: rotate(45deg);
+    border-top: .5px solid var(--bg-fourth);
+    border-left: .5px solid var(--bg-fourth);
+    box-shadow: -5px -5px 15px var(--bg-fourth);
+    position: absolute;
+    right: 10px;
+    top: -8px;
+}
+
+section.content .pop-up form {
+    width: 100%;
+}
+
+section.content .pop-up form input {
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    padding: 3px 25px 3px 15px;
+    text-align: left;
+    margin: .5px 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+section.content .pop-up form input:hover {
+    background-color: var(--bg-fourth);
+}
+
+section.content div.blog-content {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-fourth);
+}
+
+section.content div.blog-content p {
+    width: 90%;
+}
+
+section.content .container-btn {
+    /* width: 94.4%; */
+    min-width: 100%;
+    padding: 7px 15px;
+    border-top: .5px solid var(--bg-fourth);
+    display: flex;
+    justify-content: space-between;
+}
+
+section.content .btn-reaction {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.content .single-reaction {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.content .svg-thumb {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background-color: var(--bg-tertiary);
+    border-radius: 3px;
+}
+
+section.content .btn-comment {
+    background-color: var(--btn-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+section.content .all-comments {
+    background-color: var(--bg-primary);
+    border-radius: 0px 0px 3px 3px;
+    padding: 0px 15px 10px 15px;
+}
+
+section.content .see-comments, .see-comments span {
+    color: var(--box-shadow);
+    font-size: smaller;
+    cursor: pointer;
+}

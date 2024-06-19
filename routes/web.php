@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SurveyController;
@@ -27,6 +28,13 @@ Route::prefix('event/')->name('event.')->group(function(): void{
 Route::prefix('course/')->name('course.')->group(function(): void{
 
     Route::get('', [CourseController::class, 'index'])
+        ->name('index');
+
+});
+
+Route::prefix('blog/')->name('blog.')->group(function(): void{
+
+    Route::get('', [BlogController::class, 'index'])
         ->name('index');
 
 });
