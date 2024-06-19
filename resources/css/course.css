@@ -1,3 +1,7 @@
+section.content {
+    background-color: var(--bg-fourth);
+}
+
 .tools-wrapper {
     display: flex;
     justify-content: flex-end;
@@ -72,10 +76,10 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px 0 10px;
+    padding: 10px;
 }
 
-.content {
+.section-container {
     background-color: var();
     padding: 10px;
     background-color: var(--bg-fourth);

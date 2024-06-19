@@ -7,7 +7,7 @@
         <a href="#" class="nav-link">Blog</a>
         <a href="{{ route('event.index') }}" class="nav-link {{ request()->routeIs('event.index') ? 'active' : '' }}">Evenement</a>
         <a href="{{ route('survey.index') }}" class="nav-link {{ request()->routeIs('survey.*') ? 'active' : '' }}">Sondage</a>
-        <a href="#" class="nav-link">Cercle</a>
+        <a href="{{ route('course.index') }}" class="nav-link {{ request()->routeIs('course.*') ? 'active' : '' }} ">Cercle</a>
     </div>
 
     @auth
