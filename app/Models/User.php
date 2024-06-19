@@ -30,7 +30,7 @@ class User extends Authenticatable
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
-     */
+     */ 
     protected $hidden = [
         'password',
         'remember_token',
@@ -73,7 +73,11 @@ class User extends Authenticatable
         return in_array($this->id, $event->users()->pluck('id')->toArray());
     }
 
-    public function courses(): HasMany{
+    public function course(): HasMany{
         return $this->hasMany(Course::class, 'author_id');
+    }
+
+    public function courses(): BelongsToMany{
+        return $this->belongsToMany(Course::class, 'course_user', 'user_id', 'course_id');
     }
 }

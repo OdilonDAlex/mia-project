@@ -1,0 +1,104 @@
+.tools-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+select,
+input {
+    width: 20%;
+    padding: 5px 10px 0 0;
+    margin-left: 20px;
+}
+
+select {
+    text-align: center;
+}
+
+.module-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 30px;
+    background-color: var(--bg-fourth);
+}
+
+.module-container {
+    width: 30%;
+    margin-bottom: 32px;
+    border-radius: 3px;
+    box-shadow: 0px 5px 5px var(--box-shadow);
+    background-color: var(--bg-primary);
+}
+
+.module-container p {
+    text-align: center;
+    font-size: small;
+    padding: 10px;
+}
+
+.see-more {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px;
+}
+
+.see-more button {
+    padding: 5px 30px 5px 30px;
+    border-radius: 3px;
+    border: 1px  solid var(--btn-primary);
+    color: var(--text-primary);
+}
+
+.reactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+    background-color: var(--bg-fourth);
+}
+.module-name-and-date-wrapper button {
+    background-color: var(--bg-fourth);
+}
+
+.reactions p {
+    font-size: small;
+    text-align: left;
+    padding: 0px;
+}
+
+.module-name-and-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.content {
+    background-color: var();
+    padding: 10px;
+    background-color: var(--bg-fourth);
+}
+
+button {
+    border-radius: 3px;
+    border: none;
+    background-color: var(--btn-tertiary);
+}
+
+button.btn-interested {
+    background-color: var(--btn-primary);
+    color: var(--bg-fourth);
+    padding: 8px 10px;
+}
+h1{
+    color: var(--text-primary);
+}
+
+#btn_creation{
+    background-color: var(--btn-secondary);
+    color: var(--bg-fourth);
+    padding: 5px 20px 5px 20px;
+    float: right;
+}

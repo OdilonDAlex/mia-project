@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,13 @@ Route::prefix('survey/')->name('survey.')->group(function(): void{
 Route::prefix('event/')->name('event.')->group(function(): void{
 
     Route::get('', [EventController::class, 'index'])
+        ->name('index');
+
+});
+
+Route::prefix('course/')->name('course.')->group(function(): void{
+
+    Route::get('', [CourseController::class, 'index'])
         ->name('index');
 
 });
