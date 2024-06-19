@@ -16,8 +16,9 @@
 
 .survey-item > h1 {
     font-size: 22px;
+    font-weight: normal;
     margin-bottom: 5px;
-    color: rgb(57, 57, 60);
+    color: var(--btn-primary);
 }
 
 .survey-item .content {
@@ -46,7 +47,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
-    padding: 8px;
+    height: min-content;
     height: 50px;
 }
 

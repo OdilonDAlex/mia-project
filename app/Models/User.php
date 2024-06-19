@@ -72,4 +72,8 @@ class User extends Authenticatable
     public function isAttachedAt(EventModel $event){
         return in_array($this->id, $event->users()->pluck('id')->toArray());
     }
+
+    public function courses(): HasMany{
+        return $this->hasMany(Course::class, 'author_id');
+    }
 }
