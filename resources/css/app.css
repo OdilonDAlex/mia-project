@@ -7,7 +7,7 @@
     --btn-primary: #50577a;
     --btn-secondary: #41475e;
     --btn-tertiary: #ffffff;
-    --box-shadow: #2a2b3677;
+    --box-shadow: #2a2b3634;
 }
 
 * {
@@ -25,4 +25,9 @@
 
 ::-webkit-scrollbar-thumb{
     background-color: #bebdbd;
+}
+
+section.content {
+    position: relative;
+    z-index: 1;
 }

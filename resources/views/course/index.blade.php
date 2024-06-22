@@ -5,7 +5,10 @@
 @vite('resources/css/course.css')
 
 @section('content')
-<h1>Cercle a Venir</h1>
+<div class="create-new-students-group-conjuring">
+    <h1>Cercle a Venir</h1>
+    <button class="btn-create-new-students-group">Creer Un cercle</button>
+</div>
 <section class="section-container">
     <div class="container">
         <div class="tools-wrapper">
@@ -14,15 +17,25 @@
                 <option value="">Lorem.</option>
                 <option value="">Lorem.</option>
             </select>
-            <input type="search">
+            <div class="input-search-conjuring">
+                <input type="search">
+                <button class="btn-icon-search">
+                    @include('assets.svg.search-bar')
+                </button>
+            </div>
         </div>
     </div>
 
     <div class="module-wrapper">
         @forelse($confirmed_courses as $course)
-            <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
         @empty
-            Aucun
+        Aucun
         @endforelse
     </div>
 
@@ -31,9 +44,9 @@
     </div>
 </section>
 
-    
-   
-<h1>Demande de cercle</h1>
+
+
+<!-- <h1>Demande de cercle</h1>
 <section class="section-container">
 
     <div class="container">
@@ -44,22 +57,22 @@
                 <option value="">Lorem.</option>
             </select>
             <input type="search">
-            
+
             <button id="btn_creation" style="margin-top: 20px;"> Cree un nouveau </button>
         </div>
     </div>
 
     <div class="module-wrapper">
         @forelse($pending_courses as $course)
-            <x-course-item :course="$course" />
+        <x-course-item :course="$course" />
         @empty
-            Aucun
+        Aucun
         @endforelse
     </div>
 
     <div class="see-more">
         <button>Voir plus</button>
     </div>
-</section>
+</section> -->
 
 @endsection

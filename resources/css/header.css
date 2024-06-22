@@ -1,4 +1,5 @@
 header {
+    position: relative;
     width: 100vw;
     height: 50px;
     background-color: var(--bg-primary);
@@ -6,6 +7,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
 
 header .container-nav-links {
@@ -167,3 +169,8 @@ header .btn-connection {
     border: .5px solid var(--btn-primary);
     background-color: var(--btn-primary);
 }
+
+header {
+    box-shadow: 0px 1px 15px var(--box-shadow);
+}
+

@@ -10,6 +10,6 @@
     @endif
     <div class="reactions">
         <p>10 personne interesse</p>
-        <button class="btn-interested">interesser</button>
+        <button class="btn-interested">Interesser</button>
     </div>
 </div>

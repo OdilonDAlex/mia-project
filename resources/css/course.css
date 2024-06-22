@@ -1,23 +1,60 @@
-section.content {
+/* section.content {
     background-color: var(--bg-fourth);
-}
+} */
 
 .tools-wrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     padding: 10px;
 }
 
-select,
-input {
-    width: 20%;
-    padding: 5px 10px 0 0;
-    margin-left: 20px;
+section.content button.btn-create-new-students-group {
+    padding: 5px;
+}
+
+.create-new-students-group-conjuring {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+select,.input-search-conjuring {
+    width: 25%;
 }
 
 select {
     text-align: center;
+    border: 1px solid #dddd;
 }
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+select,input[type="search"] {
+    padding: 5px;
+    outline: none;
+}
+
+.input-search-conjuring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="search"] {
+    outline: none;
+    border: 1px solid #dddd;
+    width: 100%;
+    border: 10px 0 0 10px;
+}
+
+.btn-icon-search {
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
 
 .module-wrapper {
     display: flex;
@@ -51,7 +88,7 @@ select {
 .see-more button {
     padding: 5px 30px 5px 30px;
     border-radius: 3px;
-    border: 1px  solid var(--btn-primary);
+    border: 1px solid var(--btn-primary);
     color: var(--text-primary);
 }
 
@@ -62,8 +99,10 @@ select {
     padding: 10px;
     background-color: var(--bg-fourth);
 }
+
 .module-name-and-date-wrapper button {
     background-color: var(--bg-fourth);
+    padding: 5px;
 }
 
 .reactions p {
@@ -94,13 +133,14 @@ button {
 button.btn-interested {
     background-color: var(--btn-primary);
     color: var(--bg-fourth);
-    padding: 8px 10px;
+    padding: 5px 10px 5px 10px;
 }
-h1{
+
+h1 {
     color: var(--text-primary);
 }
 
-#btn_creation{
+#btn_creation {
     background-color: var(--btn-secondary);
     color: var(--bg-fourth);
     padding: 5px 20px 5px 20px;
