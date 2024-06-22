@@ -24,4 +24,13 @@ class Course extends Model
     public function users(): BelongsToMany{
         return $this->belongsToMany(User::class, 'course_user', 'course_id', 'user_id');
     }
+
+    /**
+     * Nombre de personne interessé au cours
+     * 
+     * @return int 
+     */
+    public function getInterestedUser(): ?int {
+        return count($this->users()->get()->toArray()) ?? 0;
+    }
 }
