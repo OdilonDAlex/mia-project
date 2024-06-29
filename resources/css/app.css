@@ -3,7 +3,7 @@
     --bg-primary: #ffffff;
     --bg-secondary: #47e2d0;
     --bg-tertiary: #47bde2;
-    --bg-fourth: #f0f0f0;
+    --bg-fourth: #f0f0f06e;
     --btn-primary: #50577a;
     --btn-secondary: #41475e;
     --btn-tertiary: #ffffff;
@@ -14,8 +14,11 @@
     margin: 0;
     padding: 0;
     font-family: Poppins;
-    font-size: small;
     box-sizing: border-box;
+}
+
+p, button, input, label, a {
+    font-size: small;
 }
 
 ::-webkit-scrollbar{

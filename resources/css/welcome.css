@@ -1,0 +1,398 @@
+/* **debut section hero-area **  */
+
+div.hero-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
+    background-color: white;
+}
+
+div.graduation-area div.presentation-convering h1, div.hero-area div.presentation-convering h1 {
+    font-size: 60px;
+    margin-bottom: 35px;
+    color: #1d1919dd;
+    background: -webkit-linear-gradient(315deg,#50577a 25%,#47bde2);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+
+div.hero-area p {
+    margin-bottom: 35px;
+    color: #1d1919dd;
+    text-align: justify;
+}
+
+div.presentation-convering,div.illustration-wrapper {
+    width: 50%;
+}
+
+div.presentation-convering button {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+div.hero-area div.presentation-convering button + button {
+    border: 1px solid #50577aa6;
+}
+button.btn-see-more-information {
+    margin-right: 10px;
+    background-color: var(--btn-primary);
+    color: white;
+}
+
+/* ** fin section hero-area **  */
+
+
+
+/* ** debut section jumbotron ** */
+
+div.jumbotron {
+    padding: 90px 50px;
+    background-color: var(--bg-tertiary);
+    background-color: var(--bg-secondary);
+}
+
+div.jumbotron h1 {
+    text-align: center;
+    color: #1d1919dd;
+}
+/* 
+div.jumbotron div.events-big-container {
+    background-color: rgba(0, 0, 255, 0.445);
+} */
+
+div.jumbotron div.events-big-container div.events-wrapper {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px 40px 15px;
+}
+
+
+div.jumbotron div.events-big-container div.events-wrapper div.event {
+    height: 190px;
+    width: 450px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 3px 5px 40px rgba(59, 59, 59, 0.253);
+    margin-bottom: 40px;
+    margin-left: 40px;
+    border-radius: 5px;
+    font-size: small;
+    background-color: var(--bg-primary);
+}
+
+div.event-title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+div.event div.event-title-wrapper {
+    width: 100%;
+}
+
+
+div.event-title-wrapper div.circle-colored {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+div.event p {
+    margin-left: 50px;
+}
+
+/*fin section jumbotron **  */
+
+
+
+/** pour le slide **/
+
+div.slide-big-wrapper {
+    height: 100vh;
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--bg-primary);
+}
+
+div.slide-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+div.slide-container div.slide-buttons-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+}
+
+div.slide-container div.slide-buttons-container button {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.699);
+    backdrop-filter: blur(10px);
+    background-color: antiquewhite;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+div.slide-container div.slide-buttons-container button:active {
+    background-color: white;
+}
+
+div.slide-container div.slide-item div.prev {
+    border-color: red;
+}
+
+div.slide-container div.slide-item div.next {
+    border-color: green;
+}
+
+div.slide-container div.slide-item div.active {
+    border-color: aqua;
+}
+
+div.slide-container div.slide-item {
+    width: 75%;
+    height: 75%;
+    background-color: white;
+}
+
+div.slide-container div.slide-item {
+    display: none;
+    border: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+div.slide-container div.prev {
+    display: block;
+    position: absolute;
+    align-self: center;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+
+div.slide-container div.next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+
+div.slide-container div.prev,
+div.slide-container div.next {
+    filter: blur(1px);
+}
+
+div.slide-container div.active {
+    display: block;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.514);
+}
+
+div.slide-container div.active {
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+div.slide-container object {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@keyframes backward {
+    from {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 70%;
+        height: 80%;
+        /* opacity: 1; */
+    }
+
+    to {
+        left: 100%;
+        transform: translate(-100%, -50%);
+        width: 75%;
+        height: 75%;
+        /* opacity: .6; */
+    }
+}
+
+@keyframes forward {
+    from {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 80%;
+        /* opacity: 1; */
+    }
+
+    to {
+        left: 0%;
+        transform: translate(0%, -50%);
+        width: 75%;
+        height: 75%;
+        /* opacity: .6; */
+    }
+}
+
+@keyframes fromPrev {
+    from {
+        transform: translate(0%, -50%);
+        width: 75%;
+        height: 75%;
+        left: 0%;
+        /* opacity: .95; */
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 80%;
+        left: 50%;
+        /* opacity: 1; */
+    }
+}
+
+@keyframes fromNext {
+    from {
+        transform: translate(-100%, -50%);
+        left: 100%;
+        width: 75%;
+        height: 75%;
+        /* opacity: .95; */
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 70%;
+        height: 80%;
+        /* opacity: 1; */
+    }
+}
+
+
+@keyframes toPrev {
+
+    from {
+        display: block;
+        opacity: 0;
+        left: 0%;
+        width: 75%;
+        height: 75%;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+        left: 0%;
+        width: 75%;
+        height: 75%;
+    }
+
+}
+
+@keyframes toNext {
+
+    from {
+        display: block;
+        opacity: 0;
+        right: 0%;
+        width: 75%;
+        height: 75%;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+        right: 0%;
+        width: 75%;
+        height: 75%;
+    }
+
+}
+
+/** debut graduatiion-area **/
+
+div.graduation-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
+    border-top:1px solid var(--btn-primary) ;
+    background-color: var(--bg-fourth);
+}
+
+div.graduation-area div.presentation-convering h1 {
+    font-size: 50px;
+    margin-bottom: 35px;
+    color: #1d1919dd;
+}
+
+div.graduation-area div.presentation-convering button {
+    border:1px solid  #50577aa6;
+    color:var(--btn-primary);
+}
+
+div.graduation-area p {
+    margin-bottom: 35px;
+    color: #1d1919dd;
+    text-align: justify;
+}
+
+
+
+/** fin graduation area **/

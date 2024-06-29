@@ -1,13 +1,15 @@
 @vite(['resources/css/header.css', 'resources/js/header.js'])
 <header>
-    <p class="logo">LOGO</p>
+    <div class="left-part">
+        <p class="logo">LOGO</p>
 
-    <div class="container-nav-links">
-        <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Acceuil</a>
-        <a href="{{ route('blog.index') }}" class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a>
-        <a href="{{ route('event.index') }}" class="nav-link {{ request()->routeIs('event.index') ? 'active' : '' }}">Evenement</a>
-        <a href="{{ route('survey.index') }}" class="nav-link {{ request()->routeIs('survey.*') ? 'active' : '' }}">Sondage</a>
-        <a href="{{ route('course.index') }}" class="nav-link {{ request()->routeIs('course.*') ? 'active' : '' }} ">Cercle</a>
+        <div class="container-nav-links">
+            <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Acceuil</a>
+            <a href="{{ route('blog.index') }}" class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a>
+            <a href="{{ route('event.index') }}" class="nav-link {{ request()->routeIs('event.index') ? 'active' : '' }}">Evenement</a>
+            <a href="{{ route('survey.index') }}" class="nav-link {{ request()->routeIs('survey.*') ? 'active' : '' }}">Sondage</a>
+            <a href="{{ route('course.index') }}" class="nav-link {{ request()->routeIs('course.*') ? 'active' : '' }} ">Cercle</a>
+        </div>
     </div>
 
     @auth
@@ -20,6 +22,7 @@
             </div>
             <div class="profil-user">
                 <p class="acronym-user">{{ Str::title(strtoupper(Str::limit(Auth::user()->firstname, 2, ''))) }}</p>
+                <p class="fullname"><span>{{ Auth::user()->getFullName() }}</span> <span>▾</span></p>
                 <form style="display: none;" method="POST" action="{{ route('logout') }}" class="container-profil">
                     @csrf
 
