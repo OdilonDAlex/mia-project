@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Survey;
+use App\Models\Reaction;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,8 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->foreignIdFor(Survey::class, 'survey_id')->constrained()->cascadeOnDelete();
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreignIdFor(Reaction::class, 'reaction_id')->nullable();
         });
     }
 
@@ -22,9 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->dropConstrainedForeignIdFor(Survey::class, 'survey_id');
-            $table->dropForeignIdFor('survey_id');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropForeignIdFor('reaction_id');
         });
     }
 };

@@ -24,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('courses', function (Blueprint $table) {
             $table->dropConstrainedForeignIdFor(User::class, 'author_id');
-            $table->dropColumn('author_id');
+            $table->dropForeignIdFor(User::class, 'author_id');
         });
     }
 };
