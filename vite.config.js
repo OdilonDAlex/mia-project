@@ -17,7 +17,7 @@ export default defineConfig({
                 'resources/css/register.css',
                 'resources/css/survey-item.css',
                 'resources/css/survey.css',
-                'resources/js/blog-post-setting.css',
+                'resources/js/blog-post-setting.js',
                 'resources/css/welcome.css',
             ],
             refresh: true,
