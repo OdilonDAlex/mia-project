@@ -12,7 +12,8 @@ class BlogController extends Controller
 {
     public function index(){
         return view('blog.index', [
-            'posts' => Post::all(),
+            'recentPost' => Post::orderBy('created_at', 'desc')->limit(3)->get(),
+            'posts' => Post::orderBy('created_at', 'desc')->get(),
         ]);
     }
 
@@ -29,7 +30,11 @@ class BlogController extends Controller
         $user = Auth::user();
         $post = $user->posts()->create($request->validated());
 
-        $post->reaction()->create();
+        $reaction = $post->reaction()->create();
+
+        $post->reaction()->associate($reaction);
+
+        $post->save();
 
         return redirect()->route('blog.index')->with('newPost', 'Publication créer avec succée');
     }

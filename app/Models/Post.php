@@ -31,6 +31,6 @@ class Post extends Model
     }
 
     public function getCreationaDateTime(){
-        return (new Carbon($this->created_at))->format('d m H i s');
+        return (new Carbon($this->created_at))->format('i s');
     }
 }

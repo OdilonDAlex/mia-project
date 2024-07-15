@@ -14,65 +14,11 @@ use Illuminate\Support\Facades\Vite;
             <h1>Les postes recentes</h1>
 
             <div class="extract-blog-container">
-                <div class="each-blog">
-                    <h4>Ysername B!gosy</h4>
-                    <p>Lorem ipsum dolor sit amet conturlorem ipsum dolor sit.</p>
-
-                    <div class="container-btn-reaction">
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&uarr;</button>
-                            </form>
-                            <p class="reaction-number">23</p>
-                        </div>
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&darr;</button>
-                            </form>
-                            <p class="reaction-number">10</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="each-blog">
-                    <h4>Hey You H!lp</h4>
-                    <p>Lorem Eli accusamus rem at dolor.</p>
-
-                    <div class="container-btn-reaction">
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&uarr;</button>
-                            </form>
-                            <p class="reaction-number">23</p>
-                        </div>
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&darr;</button>
-                            </form>
-                            <p class="reaction-number">10</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="each-blog">
-                    <h4>Bogosy Lerony</h4>
-                    <p> Eligendi accusamus rem at dolor.</p>
-
-                    <div class="container-btn-reaction">
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&uarr;</button>
-                            </form>
-                            <p class="reaction-number">23</p>
-                        </div>
-                        <div class="single-reaction">
-                            <form class="svg-thumb">
-                                <button type="submit">&darr;</button>
-                            </form>
-                            <p class="reaction-number">10</p>
-                        </div>
-                    </div>
-                </div>
+                @forelse($recentPost as $post)
+                    <x-blog.posts.aside-post-item :post="$post"/>
+                @empty
+                    Tsisy alo lty ah...
+                @endforelse
             </div>
         </div>
     </div>
@@ -108,157 +54,31 @@ use Illuminate\Support\Facades\Vite;
     <!-- blogs -->
 
 
-    <hr>
+    
+    <a href="{{ route('blog.posts.create') }}">Créer un post</a>
+    <div class="list-blogs">
     @forelse($posts as $post)
 
         <!-- Debut Affiche Post -->
 
-        <div class="container-single-blog">
-            <div class="head-blog">
-                <div class="info-user">
-                    <div class="acronym-user">{{ $post->user->getUserProfile() }}</div>
-                    <div class="username-and-date">
-                        <p class="author-name">{{ $post->user->getFullName() }}</p>
-                        <p class="date-pub">{{ $post->getCreationaDateTime() }}</p>
-                    </div>
-                </div>
-                <div class="plus-info">
-                    <p class="three-dots">⁝</p>
-                </div>
-            </div>
-
-            <div class="content">
-                <p>{{ $post->content }}</p>
-            </div>
-
-            <div class="container-btn">
-                <div class="btn-reaction">
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&uarr;</button>
-                        </form>
-                        <p class="reaction-number">23</p>
-                    </div>
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&darr;</button>
-                        </form>
-                        <p class="reaction-number">10</p>
-                    </div>
-                </div>
-
-                <form action="{{ route('blog.comments.create', ['post' => $post]) }}" method="GET">
-
-                    <button type="submit" class="btn-comment">Commenter</button>
-                </form>
-            </div>
-
-            <div class="see-all-comments">
-                <p class="see-comments">Voir plus de commentaires <span>▼</span></p>
-            </div>
-        </div>
-    
+        <x-blog.posts.post-item :post="$post"/>    
 
         <!-- fin affichage post -->
+
         @php
         $comments = $post->comments()->get();
         @endphp
-        <h3>Commentaires</h3>
+            <h3>Commentaires</h3>
         @forelse($comments as $comment)
-        <p>{{ $comment->content }}</p>
+            <center>
+                <p>{{ $comment->content }}</p>
+            </center>
         @empty
-        Aucun commentaire
+            tsisy commentaire lty ah...
         @endforelse
-    @empty
-        Tsisy posts mintsy lty ah...
-    @endforelse
-    <a href="{{ route('blog.posts.create') }}">Créer un post</a>
-    <div class="list-blogs">
-        <div class="container-single-blog">
-            <div class="head-blog">
-                <div class="info-user">
-                    <div class="acronym-user">An</div>
-                    <div class="username-and-date">
-                        <p class="author-name">Author Name</p>
-                        <p class="date-pub">1 min</p>
-                    </div>
-                </div>
-                <div class="plus-info">
-                    <p class="three-dots">⁝</p>
-                </div>
-            </div>
-
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quo aliquid, quibusdam et fugiat ad molestiae praesentium eaque, harum recusandae?</p>
-            </div>
-
-            <div class="container-btn">
-                <div class="btn-reaction">
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&uarr;</button>
-                        </form>
-                        <p class="reaction-number">23</p>
-                    </div>
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&darr;</button>
-                        </form>
-                        <p class="reaction-number">10</p>
-                    </div>
-                </div>
-
-                <button class="btn-comment">Commenter</button>
-            </div>
-
-            <div class="see-all-comments">
-                <p class="see-comments">Voir plus de commentaires <span>▼</span></p>
-            </div>
-        </div>
-
-        <div class="container-single-blog">
-            <div class="head-blog">
-                <div class="info-user">
-                    <div class="acronym-user">An</div>
-                    <div class="username-and-date">
-                        <p class="author-name">Author Name</p>
-                        <p class="date-pub">1 min</p>
-                    </div>
-                </div>
-                <div class="plus-info">
-                    <p class="three-dots">⁝</p>
-                </div>
-            </div>
-
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quo aliquid, quibusdam et fugiat ad molestiae praesentium eaque, harum recusandae?</p>
-            </div>
-
-            <div class="container-btn">
-                <div class="btn-reaction">
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&uarr;</button>
-                        </form>
-                        <p class="reaction-number">23</p>
-                    </div>
-                    <div class="single-reaction">
-                        <form class="svg-thumb">
-                            <button type="submit">&darr;</button>
-                        </form>
-                        <p class="reaction-number">10</p>
-                    </div>
-                </div>
-
-                <div class="container-comments">
-                    <button class="btn-comment">Commenter</button>
-                </div>
-            </div>
-
-            <div class="see-all-comments">
-                <p class="see-comments">Voir plus de commentaires <span>▼</span></p>
-            </div>
-        </div>
+        @empty
+            Tsisy posts mintsy lty ah...
+        @endforelse
     </div>
 
     <div class="container-comments-pop-up">
