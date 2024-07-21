@@ -19,6 +19,7 @@ export default defineConfig({
                 'resources/css/survey.css',
                 'resources/js/blog-post-setting.js',
                 'resources/css/welcome.css',
+                'resources/js/createPost.js'
             ],
             refresh: true,
         }),

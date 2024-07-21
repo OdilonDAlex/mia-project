@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Blog\newPost;
 use App\Http\Requests\Blog\comments\CreateCommentFormRequest;
 use App\Http\Requests\Blog\posts\CreatePostFormRequest;
 use App\Models\Post;
@@ -35,6 +36,8 @@ class BlogController extends Controller
         $post->reaction()->associate($reaction);
 
         $post->save();
+        
+        newPost::dispatch($post);
 
         return redirect()->route('blog.index')->with('newPost', 'Publication créer avec succée');
     }
