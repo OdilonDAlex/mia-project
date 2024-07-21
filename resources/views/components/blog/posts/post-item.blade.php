@@ -20,19 +20,29 @@
     <div class="container-btn">
         <div class="btn-reaction">
             <div class="single-reaction">
-                <form class="svg-thumb">
+                <form class="svg-thumb" method="POST" name="reactionPositive" action="{{ route('blog.posts.react') }}">
+                    @method('patch')
+                    @csrf
+                    
+                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                    <input type="hidden" name="type" value="positive">
                     <button type="submit">&uarr;</button>
                 </form>
                 <p class="reaction-number">{{ $post->reaction->positive }}</p>
             </div>
             <div class="single-reaction">
-                <form class="svg-thumb">
+                <form class="svg-thumb" method="POST" name="reactionNegative" action="{{ route('blog.posts.react') }}">
+                    @method('patch')
+                    @csrf
+
+                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                    <input type="hidden" name="type" value="negative">
                     <button type="submit">&darr;</button>
                 </form>
                 <p class="reaction-number">{{$post->reaction->negative }}</p>
             </div>
         </div>
-
+        
         <form action="{{ route('blog.comments.create', ['post' => $post]) }}" method="GET">
 
             <button type="submit" class="btn-comment">Commenter</button>

@@ -57,4 +57,26 @@ class BlogController extends Controller
 
         return redirect()->route('blog.index', ['newComment', 'Commentaire créer sur le post: ' . $post->id]);
     }
+
+    public function react(Request $request){
+
+        $data = $request->validate([
+            'type' => ['required', 'string', 'regex:/(positive|negative)/'],
+            'post_id' => ['required', 'integer', 'exists:posts,id'],
+        ]);
+
+        $post = Post::find($data['post_id']);
+        
+        if($data['type'] == 'positive'){
+            $post->reaction->positive += 1;
+        }
+        else {
+            $post->reaction->negative += 1;
+        }
+
+        $post->reaction->save();
+        $post->save();
+
+        return redirect()->route('blog.index');
+    }
 }

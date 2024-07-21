@@ -47,6 +47,10 @@ Route::prefix('blog/')->name('blog.')->group(function(): void{
             ->name('store')
             ->middleware('auth');
 
+        Route::patch('react', [BlogController::class, 'react'])
+            ->name('react')
+            ->middleware('auth');
+
     });
 
     Route::prefix('comments/')->name('comments.')->group(function (): void{
