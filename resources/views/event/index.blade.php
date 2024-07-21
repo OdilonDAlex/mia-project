@@ -5,6 +5,7 @@
 @vite('resources/css/event.css')
 
 @section('content')
+@if(isset($activated))
 <div class="evenement_cliquer">
     <h1 class="event-title">{{ $activated->title }}</h1>
     <div class="evenement_principale">
@@ -35,6 +36,9 @@
         </div>
     </div>
 </div>
+@else
+    <p>Aucun event pour le moment</p>
+@endif
 
 <div class="liste_evenement">
     @forelse($events as $event)
