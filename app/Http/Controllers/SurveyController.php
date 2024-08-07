@@ -13,4 +13,8 @@ class SurveyController extends Controller
             'surveys' => Survey::all(),
         ]);
     }
+
+    public function create(){
+        return view('survey.create');
+    }
 }

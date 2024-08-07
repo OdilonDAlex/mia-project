@@ -16,6 +16,8 @@ Route::prefix('survey/')->name('survey.')->group(function(): void{
     Route::get('', [SurveyController::class, 'index'])
         ->name('index');
 
+    Route::get('create', [SurveyController::class, 'create'])
+        ->name('create');
 });
 
 Route::prefix('event/')->name('event.')->group(function(): void{
@@ -51,6 +53,9 @@ Route::prefix('blog/')->name('blog.')->group(function(): void{
             ->name('react')
             ->middleware('auth');
 
+        Route::post('delete', [BlogController::class, 'deletePost'])
+            ->name('delete')
+            ->middleware('auth');
     });
 
     Route::prefix('comments/')->name('comments.')->group(function (): void{

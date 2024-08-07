@@ -4,7 +4,7 @@
 
     <div class="container-btn-reaction">
         <div class="single-reaction">
-            <form class="svg-thumb">
+                <form class="svg-thumb">
                 <button type="submit">&uarr;</button>
             </form>
             <p class="reaction-number">{{ $post->reaction->positive }}</p>

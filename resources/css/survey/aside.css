@@ -1,0 +1,8 @@
+section.content aside {
+    width: max-content;
+    padding: 10px;
+    max-width: 60ch;
+    height: calc(100vh - 50px);
+    background-color: wheat;
+    flex-grow: 1;
+}

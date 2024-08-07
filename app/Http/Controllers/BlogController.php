@@ -8,10 +8,14 @@ use App\Http\Requests\Blog\posts\CreatePostFormRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
+use function Pest\Laravel\delete;
 
 class BlogController extends Controller
 {
     public function index(){
+        // dd(Storage::disk('public')->path('negative.png'));
         return view('blog.index', [
             'recentPost' => Post::orderBy('created_at', 'desc')->limit(3)->get(),
             'posts' => Post::orderBy('created_at', 'desc')->get(),
@@ -78,5 +82,17 @@ class BlogController extends Controller
         $post->save();
 
         return redirect()->route('blog.index');
+    }
+
+    public function deletePost(Request $request){
+        $data = $request->validate([
+            'post_id' => [
+                'required', 'integer', 'exists:posts,id'
+            ],
+        ]);
+
+        Post::destroy((int)$data['post_id']);
+
+        return json_encode(['resultat' => 'OK', 'status' => 200]);
     }
 }

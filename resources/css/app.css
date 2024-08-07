@@ -16,10 +16,10 @@
     font-family: Poppins;
     box-sizing: border-box;
 }
-
+/* 
 p, button, input, label, a {
     font-size: small;
-}
+} */
 
 ::-webkit-scrollbar{
     width: 5px;

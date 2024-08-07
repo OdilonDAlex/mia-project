@@ -26,7 +26,10 @@
                     
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <input type="hidden" name="type" value="positive">
-                    <button type="submit">&uarr;</button>
+                    <button type="submit">
+                        <!-- @include('assets.svg.reaction.positive') -->
+                        &uarr;
+                    </button>
                 </form>
                 <p class="reaction-number">{{ $post->reaction->positive }}</p>
             </div>
@@ -34,10 +37,13 @@
                 <form class="svg-thumb" method="POST" name="reactionNegative" action="{{ route('blog.posts.react') }}">
                     @method('patch')
                     @csrf
-
+                    
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <input type="hidden" name="type" value="negative">
-                    <button type="submit">&darr;</button>
+                    <button type="submit">
+                        <!-- @include('assets.svg.reaction.negative') -->
+                        &darr;
+                    </button>
                 </form>
                 <p class="reaction-number">{{$post->reaction->negative }}</p>
             </div>

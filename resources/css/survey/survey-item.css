@@ -1,0 +1,30 @@
+section.content div.survey-items-container div.survey-item {
+    box-shadow: 0 1px 15px #bbb6;
+    border-radius: 5px;
+}
+
+section.content div.survey-items-container div.survey-item div.survey-item-header {
+    display: flex;
+    border-radius: 10px 10px 0 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: var(--bg-primary);
+    box-shadow: 0 1px 5px #ddd5;
+}
+
+section.content div.survey-items-container div.survey-item div.survey-item-header .option-button {
+    font-size: 28px;
+    transform: rotate(-90deg);
+    border: none;
+    padding-bottom: 5px;
+    background-color: transparent;
+}
+
+section.content div.survey-items-container div.survey-item div.survey-item-body {
+    padding: 10px;
+}
+
+section.content div.survey-items-container div.survey-item div.survey-item-body h6 {
+    font-size: 16px;
+}
