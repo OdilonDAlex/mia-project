@@ -61,7 +61,7 @@ section.content aside section  h4 {
     color: #777;
 }
 
-section.content aside section:nth-child(3) {
+section.content aside section:nth-child(4) {
     margin-top: auto;
     margin-bottom: 20px;
 }

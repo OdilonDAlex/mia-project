@@ -5,6 +5,7 @@
 @vite(['resources/css/survey/create.css', 'resources/css/survey/survey-item.css'])
 
 @section('content')
+    @include('popup.survey.create-item')
 
     @include('survey.aside')
     <div class="main-content">
