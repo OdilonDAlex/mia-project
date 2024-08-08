@@ -1,4 +1,3 @@
-
 <div class="container-single-blog">
     <div class="head-blog">
         <div class="info-user">

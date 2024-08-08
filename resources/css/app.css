@@ -29,8 +29,3 @@ p, button, input, label, a {
 ::-webkit-scrollbar-thumb{
     background-color: #bebdbd;
 }
-
-section.content {
-    position: relative;
-    z-index: 1;
-}

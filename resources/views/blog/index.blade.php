@@ -2,7 +2,7 @@
 
 @section('title')
 
-@vite('resources/css/blog.css')
+@vite(['resources/css/blog.css', 'resources/css/post-comment.css'])
 
 @section('content')
 @php
@@ -26,23 +26,8 @@ use Illuminate\Support\Facades\Vite;
 
 <main class="container-blog">
     <div class="create-blog">
-        <p class="username">Lorem</p>
-
         <div class="container-all-tools">
-            <div class="container-tools">
-                <div class="acronym-user">AA</div>
-                <textarea name="" id="" cols="30" rows="1" placeholder="A quoi pensez-vous?"></textarea>
-            </div>
-            <div class="items-colors">
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-                <p class="color"></p>
-            </div>
+            <textarea name="" id="" cols="30" rows="1" placeholder="A quoi pensez-vous?"></textarea>
         </div>
     </div>
 
@@ -53,8 +38,6 @@ use Illuminate\Support\Facades\Vite;
     @endif
     <!-- blogs -->
 
-
-    
     <a href="{{ route('blog.posts.create') }}">Créer un post</a>
     <div class="list-blogs">
     @forelse($posts as $post)
@@ -74,54 +57,13 @@ use Illuminate\Support\Facades\Vite;
                 <p>{{ $comment->content }}</p>
             </center>
         @empty
-            tsisy commentaire lty ah...
+            asiana commentaires azafady na reaction mety daholo...
         @endforelse
         @empty
             Tsisy posts mintsy lty ah...
         @endforelse
     </div>
-
-    <div class="container-comments-pop-up">
-        <div class="comments-pop-up">
-            <div class="info-blog">
-                <div class="info-user">
-                    <div class="acronym-user">An</div>
-                    <div class="username-and-date">
-                        <p class="author-name">Author Name</p>
-                        <p class="date-pub">1 min</p>
-                    </div>
-                </div>
-                <div class="desciption-container">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt praesentium quaerat provident explicabo. Mollitia, totam! Atque deserunt ipsam consequatur est vero suscipit corporis facere, possimus quis, repellendus quia quos ex.</p>
-                    <div class="recation-container">
-                        <div class="btn-reaction">
-                            <div class="single-reaction">
-                                <form class="svg-thumb">
-                                    <button type="submit">&uarr;</button>
-                                </form>
-                                <p class="reaction-number">23</p>
-                            </div>
-                            <div class="single-reaction">
-                                <form class="svg-thumb">
-                                    <button type="submit">&darr;</button>
-                                </form>
-                                <p class="reaction-number">10</p>
-                            </div>
-                        </div>
-                        <p class="comments-number">Commentaires 30</p>
-                    </div>
-                </div>
-                <div class="comments-tools">
-                    <textarea name="" id="" placeholder="Ecrivez ici..."></textarea>
-                    <button type="submit">Commenter</button>
-                </div>
-            </div>
-
-            <div class="all-comments">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe ipsa ut. Officia dicta optio ad minima omnis natus. Quam placeat tempora quo. Hic quisquam repellat officiis maiores perferendis minus!
-            </div>
-        </div>
-    </div>
 </main>
-@vite('resources/js/blog-post-setting.js')
+
+@vite('resources/js/new-blog-setting.js')
 @endsection
