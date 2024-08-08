@@ -21,7 +21,8 @@ export default defineConfig({
                 'resources/css/welcome.css',
                 'resources/js/createPost.js',
                 'resources/css/survey/aside.css',
-                'resources/css/survey/create.css'
+                'resources/css/survey/create.css',
+                'resources/js/survey/accordeon.js'
             ],
             refresh: true,
         }),

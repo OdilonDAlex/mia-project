@@ -1,8 +1,71 @@
 section.content aside {
     width: max-content;
-    padding: 10px;
-    max-width: 60ch;
+    /* padding: 10px; */
+    width: 35ch;
+    max-width: 30ch;
+    min-width: 30ch;
     height: calc(100vh - 50px);
-    background-color: wheat;
-    flex-grow: 1;
+    background-color: var(--bg-primary);
+    box-shadow: 1px 0 15px #ddd5;
+    z-index: 4;
+    border-right: 1px solid #aaa4;
+}
+
+section.content aside div.accordeon button.show-description {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--bg-fourth);
+    border-style: solid;
+    border-color: #aaa4;
+    border-width: 1px 0 1px 0;
+    box-shadow: 0px 0px 10px #eee5;
+    text-align: left;
+}   
+
+section.content aside div.accordeon button.show-description:hover {
+    filter: brightness(1.05);
+    cursor: pointer;
+}
+
+section.content aside div.accordeon p.survey-description {
+    font-size: 14px;
+    padding: 5px;
+    display: none;
+}
+
+section.content aside section {
+    padding: 10px 0;
+}
+
+section.content aside .aside-title {
+    font-weight: 400;
+    font-size: 18px;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+section.content aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+section.content aside section  h4 {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #777;
+}
+
+section.content aside section:nth-child(3) {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+section.content aside div.accordeon.active p.survey-description {
+    display: block;
 }
