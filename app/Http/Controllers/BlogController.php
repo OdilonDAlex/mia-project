@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Blog\newPost;
 use App\Http\Requests\Blog\comments\CreateCommentFormRequest;
 use App\Http\Requests\Blog\posts\CreatePostFormRequest;
 use App\Models\Post;
@@ -35,6 +36,8 @@ class BlogController extends Controller
         $post->reaction()->associate($reaction);
 
         $post->save();
+        
+        newPost::dispatch($post);
 
         return redirect()->route('blog.index')->with('newPost', 'Publication créer avec succée');
     }
@@ -53,5 +56,27 @@ class BlogController extends Controller
         $post->comments()->create(['content' => $requestData['content']]);
 
         return redirect()->route('blog.index', ['newComment', 'Commentaire créer sur le post: ' . $post->id]);
+    }
+
+    public function react(Request $request){
+
+        $data = $request->validate([
+            'type' => ['required', 'string', 'regex:/(positive|negative)/'],
+            'post_id' => ['required', 'integer', 'exists:posts,id'],
+        ]);
+
+        $post = Post::find($data['post_id']);
+        
+        if($data['type'] == 'positive'){
+            $post->reaction->positive += 1;
+        }
+        else {
+            $post->reaction->negative += 1;
+        }
+
+        $post->reaction->save();
+        $post->save();
+
+        return redirect()->route('blog.index');
     }
 }

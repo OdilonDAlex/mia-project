@@ -22,6 +22,7 @@ export default defineConfig({
                 'resources/js/post-comment.js',
                 'resources/js/blog-post-setting.js',
                 'resources/css/welcome.css',
+                'resources/js/createPost.js'
             ],
             refresh: true,
         }),
