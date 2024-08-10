@@ -18,6 +18,9 @@ Route::prefix('survey/')->name('survey.')->group(function(): void{
 
     Route::get('create', [SurveyController::class, 'create'])
         ->name('create');
+
+    Route::post('store', [SurveyController::class, 'store'])
+        ->name('store');
 });
 
 Route::prefix('event/')->name('event.')->group(function(): void{

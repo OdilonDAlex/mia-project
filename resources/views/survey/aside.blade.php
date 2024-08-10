@@ -20,10 +20,6 @@
             </p>
         </div>
     </section>
-    
-    <button class="create-survey">
-        lancer un nouveau sondage
-    </button>
 
     <section class="published-survey">
     <div class="accordeon survey">
@@ -44,4 +40,7 @@
             </p>
         </div>
     </section>
+    <button class="create-survey">
+        Créer
+    </button>
 </aside>

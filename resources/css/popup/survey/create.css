@@ -1,0 +1,50 @@
+body form.create-survey {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background-color: var(--bg-primary);
+    width: 50ch;
+    border: 1px solid #7775;
+    border-radius: 4px;
+    display: none;
+    min-width: max-content;
+}
+
+body form.create-survey input, body form.create-survey textarea {
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+body form.create-survey div.textarea {
+    position: relative;
+    width: 80%;
+    min-width: max-content;
+    margin: 10px auto;
+}
+
+body form.create-survey div.textarea textarea {
+    display: block;
+    width: 100%;
+}
+
+
+form.create-survey button.close-btn svg {
+    width: 25px;
+    height: 25px;
+}
+
+form.create-survey button.close-btn {
+    position: absolute;
+    top: 0;
+    right:0 ;
+    transform: translate(calc(100% + 10px));
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bg-primary);
+    padding: 5px;
+    border: 1px solid #7775;
+    cursor: pointer;
+}

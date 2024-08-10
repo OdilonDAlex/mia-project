@@ -29,7 +29,7 @@ section.content div.survey-details .survey-description {
 
 section.content div.survey-items-container {
     position: relative;
-    padding: 10px;
+    padding: 20px;
     display: grid;
     grid-template-columns: calc(33% - 20px) calc(33% - 20px) calc(33% - 20px);
     justify-content: space-evenly;

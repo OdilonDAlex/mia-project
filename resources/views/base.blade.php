@@ -11,6 +11,8 @@
 
     @include('header')
 
+    @yield('body')
+
     <!-- Contenu principale -->
     <section class="content">
 

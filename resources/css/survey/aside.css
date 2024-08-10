@@ -12,7 +12,7 @@ section.content aside {
 }
 
 section.content aside div.accordeon button.show-description {
-    width: 100%;
+    width: calc(100% - 20px);
     outline: none;
     border: none;
     padding: 10px;
@@ -20,9 +20,12 @@ section.content aside div.accordeon button.show-description {
     background-color: var(--bg-fourth);
     border-style: solid;
     border-color: #aaa4;
-    border-width: 1px 0 1px 0;
+    border-width: 1px;
     box-shadow: 0px 0px 10px #eee5;
+    /* border-radius: 4px 4px 0 0; */
+    border-radius: 4px;
     text-align: left;
+    margin: 10px 10px 0 10px;
 }   
 
 section.content aside div.accordeon button.show-description:hover {
@@ -34,6 +37,10 @@ section.content aside div.accordeon p.survey-description {
     font-size: 14px;
     padding: 5px;
     display: none;
+    margin: 0 10px 10px 10px ;
+    padding: 10px;
+    border: 1px solid #7775;
+    border-top-width: 0;
 }
 
 section.content aside section {
@@ -61,11 +68,24 @@ section.content aside section  h4 {
     color: #777;
 }
 
-section.content aside section:nth-child(4) {
-    margin-top: auto;
+section.content aside section:nth-child(3) {
     margin-bottom: 20px;
 }
 
 section.content aside div.accordeon.active p.survey-description {
     display: block;
+}
+
+section.content button.create-survey {
+    margin: 20px auto;
+    display: block;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    border:1px solid var(--btn-primary);
+    color: var(--btn-primary);
+    background-color: var(--btn-primary);
+    padding: 7px 10px;
+    color: white;
+    border-color: #aaa4;
 }
