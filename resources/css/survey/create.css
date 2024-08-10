@@ -69,6 +69,7 @@ section.content div.main-content .create-survey-item {
     filter: opacity(.4);
     cursor: pointer;
     color: white;
+    padding: 10px;
 }
 
 section.content div.main-content .create-survey-item:hover {

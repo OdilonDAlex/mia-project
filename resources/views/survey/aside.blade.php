@@ -3,42 +3,35 @@
     <h3 class="aside-title">Mes sondages</h3>
     <section class="unpublished-survey">
         <h4>Non publié</h4>
-        <div class="accordeon survey">
-            <button aria-label="Titre du sondage" class="surve-title show-description">
-                Lorem, ipsum dolor.
-            </button>
-            <p class="survey-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, laboriosam?
-            </p>
-        </div>
-        <div class="accordeon survey">
-            <button aria-label="Titre du sondage" class="surve-title show-description">
-                Lorem ipsum dolor sit.
-            </button>
-            <p class="survey-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, laboriosam?
-            </p>
-        </div>
+        @forelse($unpublishedSurveys as $survey)
+            <div class="accordeon survey">
+                <button aria-label="Titre du sondage" class="survey-title show-description">
+                    {{ $survey->title }}
+                </button>
+                <p class="survey-description">
+                    {{ $survey->description }}
+                </p>
+            </div>    
+        @empty
+            Aucun
+        @endforelse
     </section>
 
     <section class="published-survey">
-    <div class="accordeon survey">
-            <h4>déjà Publié</h4>
-            <button aria-label="Titre du sondage" class="surve-title show-description">
-                Lorem, ipsum.
-            </button>
-            <p class="survey-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, laboriosam?
-            </p>
-        </div>
-        <div class="accordeon survey">
-            <button aria-label="Titre du sondage" class="surve-title show-description">
-                Lorem, ipsum dolor.
-            </button>
-            <p class="survey-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, laboriosam?
-            </p>
-        </div>
+        <h4>déjà Publié</h4>
+
+        @forelse($publishedSurveys as $survey)
+            <div class="accordeon survey">
+                <button aria-label="Titre du sondage" class="surve-title show-description">
+                    {{ $survey->title }}
+                </button>
+                <p class="survey-description">
+                    {{ $survey->description }}
+                </p>
+            </div>    
+        @empty
+            Aucun
+        @endforelse
     </section>
     <button class="create-survey">
         Créer

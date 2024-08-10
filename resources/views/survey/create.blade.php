@@ -15,53 +15,18 @@
     <div class="main-content">
         <div class="survey-details">
             <h5 class="survey-title">
-                Projet etude ensemble L3 MIA
+                {{ $selectedSurvey->title }}
             </h5>
             <p class="survey-description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quis, culpa iure delectus nihil sapiente.
+                {{ $selectedSurvey->description }}
             </p>
         </div>
         <div class="survey-items-container">
-            <div class="survey-item">
-                <div class="survey-item-header">
-                    <p>Question 1</p>
-                    <button class="option-button">...</button>
-                </div>
-                <div class="survey-item-body">
-                    <h6>Lorem ipsum dolor sit ?</h6>
-                    <small>5 réponses prédéfinies</small>
-                </div>
-            </div>
-            <div class="survey-item">
-                <div class="survey-item-header">
-                    <p>Question 2</p>
-                    <button class="option-button">...</button>
-                </div>
-                <div class="survey-item-body">
-                    <h6>Lorem, ipsum dolor ?</h6>
-                    <small>pas de réponse prédéfinie</small>
-                </div>
-            </div>
-            <div class="survey-item">
-                <div class="survey-item-header">
-                    <p>Question 3</p>
-                    <button class="option-button">...</button>
-                </div>
-                <div class="survey-item-body">
-                    <h6>Lorem ipsum dolor sit amet ?</h6>
-                    <small>2 réponses prédéfinies</small>
-                </div>
-            </div>
-            <div class="survey-item">
-                <div class="survey-item-header">
-                    <p>Question 4</p>
-                    <button class="option-button">...</button>
-                </div>
-                <div class="survey-item-body">
-                    <h6>Lorem ipsum amet consectetur ?</h6>
-                    <small>1 réponse prédéfinie</small>
-                </div>
-            </div>
+
+            @forelse($selectedSurveyItems as $item)
+                <x-survey.creation.survey-item :survey-item="$item" :number="$loop->index"/>
+            @empty
+            @endforelse
             <button class="create-survey-item">
                 @include('assets.svg.survey.new')
                 Nouvelle question ?

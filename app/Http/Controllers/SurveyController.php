@@ -17,7 +17,15 @@ class SurveyController extends Controller
     }
 
     public function create(){
-        return view('survey.create');
+        $unpublishedSurveys = Survey::where('published', false)->orderBy('created_at', 'DESC')->get();
+        $publishedSurveys = Survey::where('published', true)->orderBy('created_at', 'DESC')->get();
+
+        return view('survey.create', [
+            'unpublishedSurveys' => $unpublishedSurveys,
+            'publishedSurveys' => $publishedSurveys,
+            'selectedSurvey' => $unpublishedSurveys[0] ?? null,
+            'selectedSurveyItems' => $unpublishedSurveys[0]->items()->get() ?? null,
+        ]);
     }
 
     public function store(Request $request){
