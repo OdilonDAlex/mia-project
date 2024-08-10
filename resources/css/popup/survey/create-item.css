@@ -59,7 +59,6 @@ form.create-item-popup button.new-answers {
 form.create-item-popup button[type='submit'] {
     position: relative;
     left: 100%;
-    margin: 20px 0;
     transform: translate(calc(-100% - 40px));
     background-color: var(--btn-primary);
     padding: 7px 10px; 
@@ -77,4 +76,35 @@ form.create-item-popup button.new-answers:hover {
 
 form.create-item-popup button.new-answers:hover svg .path-1 {
     fill: white;
+}
+
+div.answers {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+}
+
+div.answers input {
+    margin: 10px 0;
+    width: 100%;
+}
+
+div.answer-type-container {
+    width: 80%;
+    margin: 20px auto;
+    /* background-color: red; */
+}
+
+div.answer-type-container select {
+    /* border: 0; */
+    margin-left: 10px;
+    border: none;
+    border-bottom: 2px solid var(--bg-tertiary);
+    border-radius: 0 0 4px 4px;
+    outline: none;    
+    text-align: right;
+}
+
+div.answer-type-container select::selection {
+    color: red;
 }

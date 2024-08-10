@@ -1,7 +1,9 @@
 @vite(['resources/css/header.css', 'resources/js/header.js'])
 <header>
     <div class="left-part">
-        <p class="logo">LOGO</p>
+        <p class="logo">
+            @include('assets.svg.logo')
+        </p>
 
         <div class="container-nav-links">
             <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Acceuil</a>

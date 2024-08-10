@@ -5,12 +5,27 @@
     <!-- question -->
     <x-input label="Question" name="title" id="title"/>
 
-    <!-- reponses -->
-    <h5>Réponse(s) prédéfinie(s)</h5>
+    
+    
+    <div class="answer-type-container">
+        <label for="type">Type de réponse</label>
+        <select name="type" id="type">
+            <option value="text" selected>Texte</option>
+            <option value="numeric">Numérique</option>
+            <option value="boolean">Oui ou Non</option>
+        </select>
+    </div>
+
     <div class="answers">
+        <!-- reponses -->
+        <label for="">Réponses</label>
+
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
         <button class="new-answers">
             @include('assets.svg.survey.new') <br>
-            nouvelle réponse
         </button>
     </div>
 
