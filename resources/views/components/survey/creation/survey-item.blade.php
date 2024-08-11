@@ -1,4 +1,5 @@
 <div class="survey-item">
+    <input type="hidden" name="surveyItem_id" value="{{ $surveyItem->id }}">
     @php
         $question = $surveyItem->question()->first();
 

@@ -2,7 +2,7 @@
 
 @section('title', 'Sondage | creation')
 
-@vite(['resources/css/survey/create.css', 'resources/css/survey/survey-item.css'])
+@vite(['resources/css/survey/create.css', 'resources/css/survey/survey-item.css', 'resources/js/survey/app.js'])
 
 @section('body')
     @include('popup.survey.create')

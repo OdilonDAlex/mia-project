@@ -20,7 +20,9 @@ section.content div.survey-items-container div.survey-item div.survey-item-heade
     border: none;
     padding-bottom: 5px;
     background-color: transparent;
+    cursor: pointer;
 }
+
 
 section.content div.survey-items-container div.survey-item div.survey-item-body {
     padding: 10px;
@@ -36,18 +38,20 @@ section.content div.survey-items-container div.survey-item div.action {
     right: 10px;
     border-radius: 4px;
     display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--bg-primary);
     box-shadow: 0px 0px 5px #bbb6;
     padding: 5px;    
+    width: max-content;
 }
 
 section.content div.survey-items-container div.survey-item div.action button {
     background-color: var(--bg-fourth);
     width: 100%;
-    padding: 5px 20px;
+    padding: 5px;
     margin: 5px 0;
     border-width: 1px;
     border-color: #7771;

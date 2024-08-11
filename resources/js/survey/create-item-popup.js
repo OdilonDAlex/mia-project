@@ -34,6 +34,9 @@ createItemForm.addEventListener('submit', (event_) => {
         answers_type: answers_type, 
     })
     .then( (result) => {
+        // notification et integration
+        createItemForm.style.display = 'none';
+        window.location.reload();
         console.log(result);
     })
     .catch( (e) => {

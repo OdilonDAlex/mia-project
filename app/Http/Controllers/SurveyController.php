@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\Survey\AnswerType;
 use App\Models\Survey;
-
+use App\Models\Survey\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -90,5 +90,34 @@ class SurveyController extends Controller
         }
 
         return json_encode(['status' => 200, 'response' => 'Ok']);
+    }
+
+    public function deleteItem(Request $request){
+        $data = $request->validate([
+            'id' => [
+                'required',
+                'exists:items,id'
+            ]
+            ]);
+
+        /**
+         * @var $user User
+         */
+        $user = Auth::user();
+        $item = Item::find((int)$data['id']);
+        $survey = $item->survey;
+        
+        if($user == $survey->author){
+            $question = $item->question()->first();
+            $answers = $item->answers()->get();
+
+            $question->delete();
+            foreach($answers as $answer){ $answer->delete(); }
+            $item->delete();
+
+            return json_encode(['status' => 200, 'response' => 'OK']);
+        }
+
+        return json_encode(['status' => 200, 'response' => 'internal Server error']);
     }
 }

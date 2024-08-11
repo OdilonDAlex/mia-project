@@ -24,6 +24,9 @@ Route::middleware('auth')->prefix('survey/')->name('survey.')->group(function():
     Route::prefix('item/')->name('item.')->group(function (): void{
         Route::post('store',  [SurveyController::class, 'storeItem'])
             ->name('store');
+
+        Route::delete('delete',  [SurveyController::class, 'deleteItem'])
+        ->name('delete');
     });
 });
 
