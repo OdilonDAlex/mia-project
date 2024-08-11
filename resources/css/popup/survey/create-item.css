@@ -107,7 +107,7 @@ div.answer-type-container select {
 form.create-item-popup div.answers div.answer{
     display: flex;
     align-items: center;
-
+    
 }
 
 form.create-item-popup div.answers div.answer input {

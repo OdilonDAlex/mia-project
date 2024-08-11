@@ -4,7 +4,7 @@ const createItemForm = document.querySelector('form.create-item-popup');
 const closeBtn = createItemForm.querySelector('button.close-btn');
 const createItem = document.querySelector('section.content button.create-survey-item');
 const blurLevel = 5;
-
+const newAnswerButton = createItemForm.querySelector('button.new-answers');
 
 createItem.addEventListener('click', (event_) => {
 
@@ -43,4 +43,24 @@ createItemForm.addEventListener('submit', (event_) => {
         // console.error('une erreur s\'est produite');
         console.error(e);
     });
+})
+
+newAnswerButton.addEventListener('click', (event_) => {
+    event_.preventDefault();
+
+    let answersNumber = createItemForm.querySelectorAll('div.answer').length;
+    let answerContainer = document.createElement('div');
+    answerContainer.className = 'answer';
+
+    let label = document.createElement('label');
+    label.className = "answer-index";
+    label.innerText = answersNumber + 1;
+
+    let input = document.createElement('input');
+    input.setAttribute('type', 'text');
+
+    answerContainer.appendChild(label);
+    answerContainer.appendChild(input);
+
+    createItemForm.querySelector('div.answers').insertBefore(answerContainer, newAnswerButton);
 })
