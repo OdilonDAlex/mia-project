@@ -6,11 +6,16 @@
         $answersCount = count($surveyItem->answers()->get()->toArray());
     @endphp
     <div class="survey-item-header">
-        <p>Question {{ $number }}</p>
+        <p>Question {{ $number + 1 }}</p>
         <button class="option-button">...</button>
     </div>
     <div class="survey-item-body">
-        <h6>{{ $question->content }}</h6>
-        <small>{{ $answersCount }} reponse{{ $answersCount > 1  ? 's' : ''}} prédéfinie{{ $answersCount > 1 : 's' : ''}}</small>
+        <h6>{{ $question->content ?? 'Aucune question'}}</h6>
+        <small>{{ $answersCount }} reponse{{ $answersCount > 1  ? 's' : ''}} prédéfinie{{ $answersCount > 1 ? 's' : ''}}</small>
+    </div>
+
+    <div class="action">
+        <button class="edit">Modifier</button>
+        <button class="delete">Supprimer</button>
     </div>
 </div>

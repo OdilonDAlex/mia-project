@@ -6,7 +6,7 @@
 
 @section('body')
     @include('popup.survey.create')
-    @include('popup.survey.create-item')
+    @include('popup.survey.create-item',  ['survey_id' => $selectedSurvey->id])
 @endsection
 
 @section('content')

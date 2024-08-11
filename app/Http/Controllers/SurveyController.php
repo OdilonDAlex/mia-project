@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Survey\AnswerType;
 use App\Models\Survey;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,8 +18,13 @@ class SurveyController extends Controller
     }
 
     public function create(){
-        $unpublishedSurveys = Survey::where('published', false)->orderBy('created_at', 'DESC')->get();
-        $publishedSurveys = Survey::where('published', true)->orderBy('created_at', 'DESC')->get();
+        /**
+         * @var $user User
+         */
+        $user = Auth::user();
+
+        $unpublishedSurveys = $user->surveys()->where('published', false)->orderBy('created_at', 'DESC')->get();
+        $publishedSurveys = $user->surveys()->where('published', true)->orderBy('created_at', 'DESC')->get();
 
         return view('survey.create', [
             'unpublishedSurveys' => $unpublishedSurveys,
@@ -49,5 +55,40 @@ class SurveyController extends Controller
         }
 
         return json_encode(['result' => 'error', 'status' => 500]);
+    }
+
+    public function storeItem(Request $request){
+
+        $data = $request->validate([
+            'survey_id' => ['required', 'integer', 'exists:surveys,id'],
+            'answers_type' => [
+                'required',
+                'regex:/(' 
+                        .   AnswerType::boolean->value . '|'
+                        .   AnswerType::numeric->value . '|'
+                        .   AnswerType::text->value .')/'
+                ],
+            'question' => 'required|string|min:3',
+            'answers' => 'required|array',
+        ]);
+
+
+        /**
+         * @var $user User
+         */
+
+        $user = Auth::user();
+
+        $survey = $user->surveys()->find((int)$data['survey_id']);
+
+        $item = $survey->items()->create(['answers_type' => $data['answers_type']]);
+
+        $item->question()->create(['content' => $data['question']]);
+
+        foreach($data['answers'] as $answer){
+            $item->answers()->create(['content' => $answer]);
+        }
+
+        return json_encode(['status' => 200, 'response' => 'Ok']);
     }
 }

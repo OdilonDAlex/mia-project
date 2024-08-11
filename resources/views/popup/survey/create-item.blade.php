@@ -1,11 +1,10 @@
 
 @vite(['resources/css/popup/survey/create-item.css', 'resources/js/survey/create-item-popup.js'])
 <form class="create-item-popup active" action="">
-
+    <input type="hidden" name="survey_id" value="{{ $survey_id }}">
     <!-- question -->
-    <x-input label="Question" name="title" id="title"/>
+    <x-input label="Question" name="question" id="question"/>
 
-    
     
     <div class="answer-type-container">
         <label for="type">Type de réponse</label>
@@ -18,11 +17,17 @@
 
     <div class="answers">
         <!-- reponses -->
-        <label for="">Réponses</label>
+        <label for="">Réponses</label><br>
 
-        <input type="text">
-        <input type="text">
-        <input type="text">
+        <div class="answer">
+            <label class="answer-index" for="">1</label>
+            <input type="text">
+        </div>
+
+        <div class="answer">
+            <label class="answer-index" for="">2</label>
+            <input type="text">
+        </div>
 
         <button class="new-answers">
             @include('assets.svg.survey.new') <br>

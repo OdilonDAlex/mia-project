@@ -15,6 +15,10 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'answer_type'
+    ];
+
     public function question(): HasOne{
         return $this->hasOne(Question::class, 'item_id');
     }

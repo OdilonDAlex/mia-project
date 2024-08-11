@@ -86,7 +86,7 @@ div.answers {
 
 div.answers input {
     margin: 10px 0;
-    width: 100%;
+    /* width: calc(100% - 4ch); */
 }
 
 div.answer-type-container {
@@ -102,9 +102,37 @@ div.answer-type-container select {
     border-bottom: 2px solid var(--bg-tertiary);
     border-radius: 0 0 4px 4px;
     outline: none;    
-    text-align: right;
 }
 
-div.answer-type-container select::selection {
-    color: red;
+form.create-item-popup div.answers div.answer{
+    display: flex;
+    align-items: center;
+
+}
+
+form.create-item-popup div.answers div.answer input {
+    flex-grow: 2;
+    border-radius: 0 4px 4px 0;
+    border-width: 1px 1px 1px 0!important;
+}
+
+form.create-item-popup div.answers div.answer label {
+    padding: 9px 20px;
+    background-color: var(--bg-tertiary);
+    border-radius: 4px 0 0 4px;
+    color: white;
+    max-width: 5ch;
+    background-color: var(--btn-secondary);
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: rotate3d(1, 0, 0, -90deg) translate(-50%, -50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate3d(0, 0, 0, 0deg) translate(-50%, -50%);
+    }
 }

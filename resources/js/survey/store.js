@@ -11,7 +11,8 @@ createSurvey.addEventListener('click', (event_) => {
 
     createSurveyForm.style.display = 'block';
     document.querySelector('section.content').style.filter = `blur(${blurLevel}px) brightness(.5) grayscale(10)`;
-    
+    createSurveyForm.style.animation = 'show .3s ease-in-out';
+
     closeBtn.addEventListener('click', (event) => {
         event.preventDefault();
         createSurveyForm.elements.title.value = '';

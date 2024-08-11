@@ -1,4 +1,5 @@
 section.content div.survey-items-container div.survey-item {
+    position: relative;
     box-shadow: 0 1px 15px #bbb6;
     border-radius: 4px;
 }
@@ -27,4 +28,37 @@ section.content div.survey-items-container div.survey-item div.survey-item-body 
 
 section.content div.survey-items-container div.survey-item div.survey-item-body h6 {
     font-size: 16px;
+}
+
+section.content div.survey-items-container div.survey-item div.action {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary);
+    box-shadow: 0px 0px 5px #bbb6;
+    padding: 5px;    
+}
+
+section.content div.survey-items-container div.survey-item div.action button {
+    background-color: var(--bg-fourth);
+    width: 100%;
+    padding: 5px 20px;
+    margin: 5px 0;
+    border-width: 1px;
+    border-color: #7771;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+section.content div.survey-items-container div.survey-item div.action button.delete:hover {
+    background-color: tomato;
+}
+
+section.content div.survey-items-container div.survey-item div.action button.edit:hover {
+    background-color: var(--bg-tertiary);
 }
