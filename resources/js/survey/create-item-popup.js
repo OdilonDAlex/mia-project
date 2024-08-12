@@ -28,6 +28,8 @@ createItemForm.addEventListener('submit', (event_) => {
     let question = createItemForm.elements.question.value;
     let survey_id = createItemForm.elements.survey_id.value;
     let answers_type = createItemForm.elements.type.value;
+
+    console.log(answers);
     axios.post(`${window.origin}/survey/item/store`, {
         survey_id: survey_id,
         question: question,

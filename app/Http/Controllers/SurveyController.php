@@ -66,7 +66,8 @@ class SurveyController extends Controller
                 'regex:/(' 
                         .   AnswerType::boolean->value . '|'
                         .   AnswerType::numeric->value . '|'
-                        .   AnswerType::text->value .')/'
+                        .   AnswerType::date->value    . '|'
+                        .   AnswerType::text->value    . ')/'
                 ],
             'question' => 'required|string|min:3',
             'answers' => 'required|array',
