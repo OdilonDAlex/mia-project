@@ -5,6 +5,7 @@ const closeBtn = createItemForm.querySelector('button.close-btn');
 const createItem = document.querySelector('section.content button.create-survey-item');
 const blurLevel = 5;
 const newAnswerButton = createItemForm.querySelector('button.new-answers');
+const answerType =  createItemForm.elements.type;
 
 createItem.addEventListener('click', (event_) => {
 
@@ -64,3 +65,31 @@ newAnswerButton.addEventListener('click', (event_) => {
 
     createItemForm.querySelector('div.answers').insertBefore(answerContainer, newAnswerButton);
 })
+
+answerType.onchange = function(){
+    let inputs = createItemForm.querySelectorAll('div.answer input');
+    
+    inputs.forEach(input => {
+        input.value = '';
+        input.disabled = false;
+    })
+
+    if(answerType.value == 'boolean') {
+        let parent_ = inputs[0].parentElement.parentElement;
+        for(let i = 2; i < inputs.length; i++){
+            parent_.removeChild(inputs[i].parentElement);
+        }
+
+        inputs.forEach(input => {
+            input.setAttribute('type', 'text');
+            input.disabled = true;
+        })
+
+        inputs[0].value = "Oui";
+        inputs[1].value = "Non";
+    }
+    else {
+        inputs.forEach(input => {input.setAttribute('type', answerType.value); })
+    }
+
+}

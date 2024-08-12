@@ -89,6 +89,10 @@ div.answers input {
     /* width: calc(100% - 4ch); */
 }
 
+div.answers input[type="date"]{
+    padding: 7px;
+}
+
 div.answer-type-container {
     width: 80%;
     margin: 20px auto;

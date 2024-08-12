@@ -10,7 +10,8 @@
         <label for="type">Type de réponse</label>
         <select name="type" id="type">
             <option value="text" selected>Texte</option>
-            <option value="numeric">Numérique</option>
+            <option value="number">Numérique</option>
+            <option value="date">Date</option>
             <option value="boolean">Oui ou Non</option>
         </select>
     </div>

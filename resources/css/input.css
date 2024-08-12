@@ -11,7 +11,7 @@ label {
 }
 
 
-input[type="text"], input[type="password"], input[type="email"] {
+input {
     background-color: var(--bg-fourth);
     padding: 8px;
     border: 1px solid transparent;
