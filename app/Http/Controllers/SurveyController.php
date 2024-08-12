@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\Survey\AnswerType;
 use App\Models\Survey;
 use App\Models\Survey\Item;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,11 +27,20 @@ class SurveyController extends Controller
         $unpublishedSurveys = $user->surveys()->where('published', false)->orderBy('created_at', 'DESC')->get();
         $publishedSurveys = $user->surveys()->where('published', true)->orderBy('created_at', 'DESC')->get();
 
+        try {
+            $selectedSurvey = $unpublishedSurveys[0] ?? null;
+            $selectedSurveyItems = $unpublishedSurveys[0]->items()->get() ?? null;
+        }
+        catch(Exception $e){
+            $selectedSurvey = null;
+            $selectedSurveyItems = null;
+        }
+
         return view('survey.create', [
             'unpublishedSurveys' => $unpublishedSurveys,
             'publishedSurveys' => $publishedSurveys,
-            'selectedSurvey' => $unpublishedSurveys[0] ?? null,
-            'selectedSurveyItems' => $unpublishedSurveys[0]->items()->get() ?? null,
+            'selectedSurvey' => $selectedSurvey,
+            'selectedSurveyItems' => $selectedSurveyItems,
         ]);
     }
 
@@ -82,7 +92,10 @@ class SurveyController extends Controller
 
         $survey = $user->surveys()->find((int)$data['survey_id']);
 
-        $item = $survey->items()->create(['answers_type' => $data['answers_type']]);
+        $item = $survey->items()->create([
+            'answers_type' => $data['answers_type']
+            ]
+        );
 
         $item->question()->create(['content' => $data['question']]);
 

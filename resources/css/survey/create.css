@@ -80,3 +80,18 @@ section.content div.main-content .create-survey-item svg {
     width: 50px;
     height: 50px;
 }   
+
+section.content div.main-content {
+    position: relative;
+}
+
+section.content p.no-survey-yet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: 400;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    text-align: center;
+    color: #7775;
+}

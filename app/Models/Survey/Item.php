@@ -16,7 +16,7 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'answer_type'
+        'answers_type'
     ];
 
     public function question(): HasOne{

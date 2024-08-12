@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->string('answer_type')->default(AnswerType::text->value);
+            $table->string('answers_type');
         });
     }
 
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->dropColumn('answer_type');
+            $table->dropColumn('answers_type');
         });
     }
 };

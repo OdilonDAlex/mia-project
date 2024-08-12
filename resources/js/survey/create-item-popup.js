@@ -29,7 +29,7 @@ createItemForm.addEventListener('submit', (event_) => {
     let survey_id = createItemForm.elements.survey_id.value;
     let answers_type = createItemForm.elements.type.value;
 
-    console.log(answers);
+    console.log(answers_type);
     axios.post(`${window.origin}/survey/item/store`, {
         survey_id: survey_id,
         question: question,
@@ -40,7 +40,6 @@ createItemForm.addEventListener('submit', (event_) => {
         // notification et integration
         createItemForm.style.display = 'none';
         window.location.reload();
-        console.log(result);
     })
     .catch( (e) => {
         // console.error('une erreur s\'est produite');
