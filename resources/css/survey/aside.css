@@ -92,3 +92,25 @@ section.content button.create-survey {
     color: white;
     border-color: #aaa4;
 }
+
+section.content div.accordeon button.show-description {
+    position: relative;
+}
+section.content div.accordeon button.show-description a.edit-survey {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: small;
+    align-self: self-end;
+}
+
+section.content div.accordeon button.show-description.selected {
+    background-color: var(--btn-secondary);
+    color: white;
+}
+section.content div.accordeon button.show-description.selected .edit-survey {
+    color: white;
+}

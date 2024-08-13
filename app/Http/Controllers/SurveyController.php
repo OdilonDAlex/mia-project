@@ -18,21 +18,34 @@ class SurveyController extends Controller
         ]);
     }
 
-    public function create(){
+    public function create(Request $request){
+
+        $data = $request->validate([
+            'survey_id' => 'nullable|exists:surveys,id'
+        ]);
+
         /**
          * @var $user User
          */
         $user = Auth::user();
-
         $unpublishedSurveys = $user->surveys()->where('published', false)->orderBy('created_at', 'DESC')->get();
         $publishedSurveys = $user->surveys()->where('published', true)->orderBy('created_at', 'DESC')->get();
 
         try {
-            $selectedSurvey = $unpublishedSurveys[0] ?? null;
-            $selectedSurveyItems = $unpublishedSurveys[0]->items()->get() ?? null;
+            $selectedSurvey = Survey::find((int)$data['survey_id']);
+        }
+        catch(Exception $_){
+            $selectedSurvey = null;
+        }
+
+        try {
+
+            if($selectedSurvey == null){
+                $selectedSurvey = $unpublishedSurveys[0] ?? null;
+            }
+            $selectedSurveyItems = $selectedSurvey->items()->get() ?? null;
         }
         catch(Exception $e){
-            $selectedSurvey = null;
             $selectedSurveyItems = null;
         }
 

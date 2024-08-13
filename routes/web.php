@@ -17,7 +17,7 @@ Route::middleware('auth')->prefix('survey/')->name('survey.')->group(function():
         ->name('index')
         ->withoutMiddleware('auth');
 
-    Route::get('create', [SurveyController::class, 'create'])->name('create');
+    Route::get('create/', [SurveyController::class, 'create'])->name('create');
 
     Route::post('store', [SurveyController::class, 'store'])->name('store');
 

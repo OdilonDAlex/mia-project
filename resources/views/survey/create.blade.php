@@ -18,6 +18,9 @@
         @if($selectedSurvey !== null)
         
             <div class="survey-details">
+                <button class="try-survey">
+                    @include('assets.svg.play')
+                </button>
                 <h5 class="survey-title">
                     {{ $selectedSurvey->title }}
                 </h5>
