@@ -20,7 +20,7 @@
                 </p>
             </div>    
         @empty
-            Aucun
+            <p class="empty">Aucun</p>
         @endforelse
     </section>
 
@@ -37,7 +37,7 @@
                 </p>
             </div>    
         @empty
-            Aucun
+        <p class="empty">Aucun</p>
         @endforelse
     </section>
     <button class="create-survey">

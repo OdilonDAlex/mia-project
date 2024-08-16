@@ -59,7 +59,9 @@ newAnswerButton.addEventListener('click', (event_) => {
     label.innerText = answersNumber + 1;
 
     let input = document.createElement('input');
-    input.setAttribute('type', 'text');
+    input.setAttribute('type', createItemForm.elements.type.value);
+
+    console.log(input);
 
     answerContainer.appendChild(label);
     answerContainer.appendChild(input);

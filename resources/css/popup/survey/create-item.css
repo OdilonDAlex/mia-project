@@ -49,9 +49,10 @@ form.create-item-popup button.new-answers {
     background-color: transparent;
     display: block;
     margin: 0 auto;
-    padding: 5px 10px;
-    background-color: var(--bg-fourth);
-    border: 1px solid #7775;
+    /* padding: 5px 10px; */
+    /* background-color: var(--bg-fourth); */
+    /* border: 1px solid #7775; */
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -70,8 +71,7 @@ form.create-item-popup button[type='submit'] {
 }
 
 form.create-item-popup button.new-answers:hover {
-    background-color: var(--btn-primary);
-    color: white;
+    background-color: var(--btn-secondary);
 }
 
 form.create-item-popup button.new-answers:hover svg .path-1 {

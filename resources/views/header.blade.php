@@ -27,9 +27,7 @@
                 <p class="fullname"><span>{{ Auth::user()->getFullName() }}</span> <span>▾</span></p>
                 <form style="display: none;" method="POST" action="{{ route('logout') }}" class="container-profil">
                     @csrf
-
                     @method('delete')
-
                     <span class="arrow"></span>
                     @include('assets.svg.user')
                     <p class="username">{{ Auth::user()->getFullName() }}</p>

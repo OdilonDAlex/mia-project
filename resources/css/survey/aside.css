@@ -69,6 +69,7 @@ section.content aside section  h4 {
     font-weight: 400;
     font-size: 13px;
     color: #777;
+    padding-inline: 10px;
 }
 
 section.content aside section:nth-child(3) {
@@ -113,4 +114,9 @@ section.content div.accordeon button.show-description.selected {
 }
 section.content div.accordeon button.show-description.selected .edit-survey {
     color: white;
+}
+
+section.content aside p.empty {
+    padding-inline: 10px;
+    text-align: center;
 }
