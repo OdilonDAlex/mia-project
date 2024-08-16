@@ -28,6 +28,9 @@ Route::middleware('auth')->prefix('survey/')->name('survey.')->group(function():
         Route::delete('delete',  [SurveyController::class, 'deleteItem'])
         ->name('delete');
     });
+
+    Route::patch('/publish', [SurveyController::class, 'publish'])
+        ->name('publish');
 });
 
 Route::prefix('event/')->name('event.')->group(function(): void{

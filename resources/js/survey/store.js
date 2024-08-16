@@ -39,13 +39,12 @@ createSurveyForm.addEventListener('submit', (event_) => {
         createSurveyForm.style.display = 'none';
         document.querySelector('section.content').style.filter = 'none';
 
-        let newAccordion = new Accordion(title, description);
+        let newAccordion = new Accordion(result.data.survey_id, title, description);
 
         newSurveyContainer.appendChild(newAccordion.htmlElement);
         let newSurveyButton =  newAccordion.htmlElement.querySelector('button');
         
         newSurveyButton.addEventListener('click', (event_) => {
-            event_.preventDefault();
             let parentElement = event_.target.parentElement;
             if(parentElement.classList.contains('active')){
                 parentElement.classList.remove('active');
@@ -64,3 +63,4 @@ createSurveyForm.addEventListener('submit', (event_) => {
     })
     ;
 })
+

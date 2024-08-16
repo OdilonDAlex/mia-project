@@ -74,10 +74,10 @@ class SurveyController extends Controller
         ]);
 
         if($survey !== null){
-            return json_encode(['result' => 'Ok', 'status' => 200]);
+            return json_encode(['result' => 'Ok', 'status' => 200, 'survey_id' => $survey->id]);
         }
 
-        return json_encode(['result' => 'error', 'status' => 500]);
+        return json_encode(['result' => 'error', 'status' => 500,]);
     }
 
     public function storeItem(Request $request){
@@ -146,5 +146,22 @@ class SurveyController extends Controller
         }
 
         return json_encode(['status' => 200, 'response' => 'internal Server error']);
+    }
+
+    public function publish(Request $request){
+        $data = $request->validate([
+            'survey_id' => [
+                'required',
+                'integer',
+                'exists:surveys,id'
+            ]]);
+
+            $survey = Survey::find((int)$data['survey_id']);
+
+            $survey->published = true;
+
+            $survey->save();
+
+            return redirect()->route('survey.create')->with('success', 'Sondage publié avec succé');
     }
 }

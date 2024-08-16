@@ -40,7 +40,11 @@
                 </button>
             </div>
 
-            <form action="">
+            <form action="{{ route('survey.publish') }}" method="POST">
+                @csrf
+                @method('PATCH')
+
+                <input type="hidden" name="survey_id" value="{{ $selectedSurvey->id }}">
                 <button class="publish-survey-button" type="submit">Publier</button>
             </form>
         @else

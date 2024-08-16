@@ -6,8 +6,13 @@ const createItem = document.querySelector('section.content button.create-survey-
 const blurLevel = 5;
 const newAnswerButton = createItemForm.querySelector('button.new-answers');
 const answerType =  createItemForm.elements.type;
+const sectionContent = document.querySelector('section.content');
 
 createItem.addEventListener('click', (event_) => {
+
+    sectionContent.addEventListener('hover', (e) => {
+        console.log('hover');
+    })
 
     createItemForm.style.display = 'block';
     createItemForm.style.animation = 'show .3s ease-in-out';
