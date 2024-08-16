@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="content-post">
         <p>{{ $post->content }}</p>
     </div>
 

@@ -6,6 +6,7 @@ div.hero-area {
     align-items: center;
     padding: 0px 50px;
     background-color: white;
+    height: calc(100vh - 50px);
 }
 
 div.graduation-area div.presentation-convering h1, div.hero-area div.presentation-convering h1 {
@@ -70,7 +71,9 @@ div.jumbotron div.events-big-container div.events-wrapper {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 40px 15px 40px 15px;
+    row-gap: 5px;
+    column-gap: 5px;
+    padding: 40px; 
 }
 
 
@@ -87,7 +90,7 @@ div.jumbotron div.events-big-container div.events-wrapper div.event {
     margin-left: 40px;
     border-radius: 5px;
     font-size: small;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary); 
 }
 
 div.event-title-wrapper {

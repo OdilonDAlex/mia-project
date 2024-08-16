@@ -21,8 +21,11 @@
                 </div>
             </div>
             <div class="profil-user">
-                <p class="acronym-user">{{ Str::title(strtoupper(Str::limit(Auth::user()->firstname, 2, ''))) }}</p>
-                <p class="fullname"><span>{{ Auth::user()->getFullName() }}</span> <span>▾</span></p>
+                <div class="container-info-user-header">
+                    <p class="acronym-user">{{ Str::title(strtoupper(Str::limit(Auth::user()->firstname, 2, ''))) }}</p>
+                    <p class="fullname"><span>{{ Auth::user()->getFullName() }}</span> <span>▾</span></p>
+                </div>
+                
                 <form style="display: none;" method="POST" action="{{ route('logout') }}" class="container-profil">
                     @csrf
 
@@ -37,7 +40,7 @@
         </div>
     @endauth
     @guest
-        <div class="container-btn">
+        <div class="container-btn-to-submit-login">
             <form action="{{ route('register') }}" method="GET">
                 <button class="btn-inscription" type="submit">Inscription</button>
             </form>

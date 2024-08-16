@@ -11,12 +11,19 @@ window.onscroll = function() {
   prevPos = curPos;
 }
 
-document.onload = function() {
-    $(document).ready(function() {
-        $('.container-profil').hide();
+window.addEventListener('DOMContentLoaded', (event_) => {
+  event_.preventDefault()
+
+  function togglePopupUserMoreInfo (targetElement) {
+    console.log('hey you come here');
+    targetElement.style.display == 'none'? targetElement.style.display == 'block' : targetElement.style.display = 'none'
+  }
+
+  const containerUserInfoHeader = document.querySelector('.container-info-user-header')
+  const popupUserMoreInfo = document.querySelector('form.container-profil')
+
+  containerUserInfoHeader.addEventListener('click', () => {
     
-        $('.acronym-user').click(function() {
-            $('.container-profil').toggle(200);
-        })
-    })
-}
+    togglePopupUserMoreInfo(popupUserMoreInfo)
+  })
+})

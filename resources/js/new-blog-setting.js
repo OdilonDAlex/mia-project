@@ -1,7 +1,6 @@
-import { Popup } from "./Popup.js";
+import { Popup } from "./Popup.js"
 
 // popup
-
 const contentPopup = `
     <p class="close-popup">
         <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="25px" height="25px"><path d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"/></svg>
@@ -89,25 +88,177 @@ const contentPopup = `
 
 document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('.content')
-    const popup = new Popup(contentPopup, section)
-    const closePopup = popup.popup.querySelector('p.close-popup')
+    const btnsShowComment = document.querySelectorAll('button.btn-comment')
+    const lblsShowComment = document.querySelectorAll('.see-comments')
+    const txtAreaCreatePost = document.querySelector('textarea.txtarea-create-post')   
 
-    // let closePopup = section.querySelector('p.close-popup') 
-    const showComment = document.querySelector('.see-comments')
-    const btnShowComment = document.querySelector('.btn-comment')
-
-    // function to remove the poup
-    function removePopUpContent () {
-        console.log('hello');
-        popup.removePopup()
+    /**
+     * Toggle the blur of the elements aside and main
+     */
+    function toggleBlurToAnElement() {
+        const main = document.querySelector('main')
+        const aside = document.querySelector('aside')
+        main.style.filter == "blur(5px)" ? main.style.filter = "blur(0px)" : main.style.filter = "blur(5px)"
+        aside.style.filter == "blur(5px)" ? aside.style.filter = "blur(0px)" : aside.style.filter = "blur(5px)"
     }
     
-    function showPopupContent () {
-        popup.showPopup()
-        // console.log("hello bjbjhbjhdbsjhsbdjhgbdgjjj");
+    /**
+     * Remove the blur to the elements (aside, main)
+     * Remove the popup container from the section using the class Popup
+     * @param {Object} popup 
+     */
+    function removePopUpContent (popup) {
+        toggleBlurToAnElement()
+        popup.removePopup()
     }
-    // closePopup.addEventListener('click', removePopContent)
-    showComment.addEventListener('click', showPopupContent)
-    closePopup.addEventListener('click', removePopUpContent)
 
+    /**
+     * Add a blur to the elements (aside, main)
+     * Show the popup
+     * @param {object} popup 
+     */
+    function showPopupContent (popup) {
+        toggleBlurToAnElement()
+        popup.showPopup()
+    }
+    
+    /**
+     * Create a popup that allowed the users to create their own post
+     * Processing the popupHtmlElementToCreateNewPost which contains the HTML code using the class Popup
+     */
+    function popupToCreateNewPost() {
+        // HTML element of the popup post creation
+        const popupHtmlElementToCreateNewPost = `
+            <span class="close-popup-to-create-new-post">
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"/></svg>
+            </span>
+            <form action="" method="POST" class="form">
+                <div class="header-create-post-user-info">
+                    <div class="acronym-user">An</div>
+                    <p class="author-name">Author Name</p>
+                </div>
+                <textarea name="" id="" placeholder="Lorem ipsum dolor sit amet..."></textarea>
+                <div class="container-bg-choice">
+                    <p>Choisir votre style de fond</p>
+                    <div class="bg-choice">
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                        <p class="color"></p>
+                    </div>
+                </div>
+                <div class="container-btn-">
+                    <button type="submit">Publier</button>
+                </div>
+            </form>
+            `
+        const popup = new Popup(popupHtmlElementToCreateNewPost, section)
+        const closePopupToCreateNewPost = popup.popup.querySelector('span.close-popup-to-create-new-post')
+        
+        // show the popup
+        showPopupContent(popup)
+
+        // close the popup by clicking the x icon
+        closePopupToCreateNewPost.addEventListener('click', function () {
+            removePopUpContent(popup)
+        })
+    }
+
+    /**
+     * get actions when the buttons comment or label see comment are clicked (showing and removing)
+     */
+    function doShowPopupCreateNewComment () {
+        const popup = new Popup(contentPopup, section)
+        const closePopup = popup.popup.querySelector('p.close-popup')
+
+        showPopupContent(popup)
+
+        closePopup.addEventListener('click', function() {
+            removePopUpContent(popup)
+        })
+    }
+
+    // clicking each label to see comments, these are the actions
+    lblsShowComment.forEach(lblShowComment => {
+        lblShowComment.addEventListener('click', (event_) => {
+            event_.preventDefault()
+            doShowPopupCreateNewComment()        
+        })
+    })
+
+    // clicking each btn to see comments, these are the actions (same as label)
+    btnsShowComment.forEach(btnShowComment => {
+        btnShowComment.addEventListener('click', (event_) => {
+            event_.preventDefault()
+            doShowPopupCreateNewComment()
+        })
+    })
+
+    txtAreaCreatePost.onclick = function () {
+        popupToCreateNewPost()    
+    }
+
+    // select all element (three dots)to make the anchors, and using forEach to add an action to each of them
+    const threeDotsToToggleAnchors = document.querySelectorAll('section.content p.three-dots')
+
+    threeDotsToToggleAnchors.forEach(threeDotsToToggleAnchor => {
+        threeDotsToToggleAnchor.addEventListener('click', (event_) => {
+            event_.preventDefault()
+            let parentTogglerAnchor = event_.target.parentNode
+            let thisCurrentAnchor = parentTogglerAnchor.querySelector('.pop-up')
+    
+            if(thisCurrentAnchor) {
+                parentTogglerAnchor.removeChild(thisCurrentAnchor)
+            }
+            else {
+                /**
+                 * Add the element of the anchor into the parent
+                 * @var containerSingleAnchorForm parent of the anchor that we're about to create
+                 */
+                let containerSingleAnchorForm = document.createElement('div')
+                containerSingleAnchorForm.classList.add('pop-up')
+                containerSingleAnchorForm.innerHTML += `
+                    <span class="arrow"></span>
+                    <form action="" method="POST">
+                        <input type="submit" value="Partager">
+                    </form>
+                    <form action="" method="POST">
+                        <input type="submit" value="Signaler">
+                    </form>
+                    <form action="" method="POST">
+                        <input type="submit" value="Supprimer">
+                    </form>`
+                parentTogglerAnchor.appendChild(containerSingleAnchorForm)
+            }
+        })
+    })
+
+    window.onclick = function(event) {
+        var anchors = document.querySelectorAll("div.plus-info")
+        if (!event.target.matches('.three-dots')) {
+            for (let i = 0; i < anchors.length; i++) {
+                var openAnchor = anchors[i].querySelector(".pop-up")
+                if (openAnchor) {
+                    console.log(openAnchor.parentNode)
+                    openAnchor.parentNode.removeChild(openAnchor)
+                }
+            }
+        }
+        else {
+            for (let index = 0; index < anchors.length; index++) {
+                var tmpAnchor = anchors[index].querySelector('.pop-up')
+                if (!tmpAnchor) {
+                    console.dir(tmpAnchor)
+                    anchors[index].removeChild(tmpAnchor)
+                }
+            }            
+            
+        }
+    }
 })

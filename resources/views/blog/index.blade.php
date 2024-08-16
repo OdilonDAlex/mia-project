@@ -8,6 +8,7 @@
 @php
 use Illuminate\Support\Facades\Vite;
 @endphp
+
 <aside class="left-side-container">
     <div class="left-container">
         <div class="extract-blog">
@@ -27,7 +28,7 @@ use Illuminate\Support\Facades\Vite;
 <main class="container-blog">
     <div class="create-blog">
         <div class="container-all-tools">
-            <textarea name="" id="" cols="30" rows="1" placeholder="A quoi pensez-vous?"></textarea>
+            <textarea name="" id="" cols="30" rows="1" placeholder="A quoi pensez-vous?" class="txtarea-create-post"></textarea>
         </div>
     </div>
 
